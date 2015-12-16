@@ -60,11 +60,11 @@ static const unsigned int LOCKTIME_THRESHOLD = 500000000; // Tue Nov  5 00:53:20
 /** Number bytes a transaction comment is allowed to have */
 static const unsigned int MAX_TX_COMMENT_LEN = 140; // 128 bytes + little extra
 
-static const uint256 hashGenesisBlock("0x00000c3ce6b3d823a35224a39798eca9ad889966aeb5a9da7b960ffb9869db35");
-static const uint256 hashGenesisBlockTestNet("0x00001924120e93f445dd4adb9d90e0020350b8c6c2b08e1a4950372a37f8bcc8");
+static const uint256 hashGenesisBlock("0x");
+static const uint256 hashGenesisBlockTestNet("0x");
 
-static const uint256 hashHighBlock ("0xdb61f591d7fb40afa08476d6492e81a06edddf332d7027968ac130db95c07cb7");
-static const int HIGH_BLOCK_INDEX = 275000;
+static const uint256 hashHighBlock ("0x");
+static const int HIGH_BLOCK_INDEX = 100000;
 
 
 inline bool IsProtocolV2(int nHeight) { return TestNet() || nHeight > 203500; }

@@ -274,11 +274,8 @@ class CBitcoinAddress : public CBase58Data
 public:
     enum
     {
-        PUBKEY_ADDRESS = 137,
-	PUBKEY_ADDRESS_DOGE = 30,
-	PUBKEY_ADDRESS_LTC = 48,
-        SCRIPT_ADDRESS = 5,  // LTC/BTC Script ADdress
-	SCRIPT_ADDRESS_DOGE = 22, // DOGE
+        PUBKEY_ADDRESS = 55,
+		SCRIPT_ADDRESS = 8,
         PUBKEY_ADDRESS_TEST = 111,
         SCRIPT_ADDRESS_TEST = 196,
     };
@@ -378,10 +375,7 @@ public:
     bool IsValid() const
     {
         bool fExpectedFormat = vchData.size() == 32 || (vchData.size() == 33 && vchData[32] == 1);
-        bool fCorrectVersion = vchVersion == Params().Base58Prefix(CChainParams::SECRET_KEY) ||
-                               vchVersion == Params().Base58Prefix(CChainParams::SECRET_KEY_LTC)||
-                               vchVersion == Params().Base58Prefix(CChainParams::SECRET_KEY_DOGE)||
-                               vchVersion == Params().Base58Prefix(CChainParams::SECRET_KEY_BTC);
+        bool fCorrectVersion = vchVersion == Params().Base58Prefix(CChainParams::SECRET_KEY);
         return fExpectedFormat && fCorrectVersion;
     }
 

@@ -50,19 +50,19 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0x03;
-        pchMessageStart[1] = 0x22;
-        pchMessageStart[2] = 0x35;
-        pchMessageStart[3] = 0x15;
-        vAlertPubKey = ParseHex("0486bce1bac0d543f104cbff2bd23680056a3b9ea05e1137d2ff90eeb5e08472eb500322593a2cb06fbf8297d7beb6cd30cb90f98153b5b7cce1493749e41e0284");
-        nDefaultPort = 31174;
+        pchMessageStart[0] = 0x27;
+        pchMessageStart[1] = 0xa3;
+        pchMessageStart[2] = 0x41;
+        pchMessageStart[3] = 0x07;
+        vAlertPubKey = ParseHex("");
+        nDefaultPort = 30521;
         nRPCPort = 30174;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
         // be spent as it did not originally exist in the database.
         //
-        const char* pszTimestamp = "14/Apr/2014 No chowder for you, cause clams have feelings too";
+        const char* pszTimestamp = "15/Dec/2015 Merry Christmas CON";
         CTransaction txNew;
         txNew.nTime = 1397512438;
         txNew.vin.resize(1);
@@ -75,15 +75,26 @@ public:
         genesis.nVersion = 1;
         genesis.nTime    = 1397512438;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 2054231;
+        genesis.nNonce   = 0;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000c3ce6b3d823a35224a39798eca9ad889966aeb5a9da7b960ffb9869db35"));
-        assert(genesis.hashMerkleRoot == uint256("0xef10b32afd53e4a6ebb8bdb0486c6acbe9b43afe3dfa538e913b89bb1319ff96"));
+        if ((genesis.GetHash() != hashGenesisBlock) && true)
+        {
+            Logprintf("recalculating params for mainnet.\n");
+            Logprintf("old mainnet genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+            Logprintf("old mainnet genesis nonce: %s\n", genesis.nNonce.ToString().c_str());
+            Logprintf("old mainnet genesis hash:  %s\n", hashGenesisBlock.ToString().c_str());
+            for(genesis.nNonce == 0; genesis.GetHash() > bnProofOfWorkLimit; genesis.nNonce++){ } // deliberately empty for loop; finds nonce value
+            Logprintf("new mainnet genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+            Logprintf("new mainnet genesis nonce: %s\n", genesis.nNonce.ToString().c_str());
+            Logprintf("new mainnet genesis hash: %s\n", genesis.GetHash().ToString().c_str());
+        }
+        assert(hashGenesisBlock == uint256("0x"));
+        assert(genesis.hashMerkleRoot == uint256("0x"));
 
         // push peer seeders running this network crawler: https://github.com/dooglus/bitcoin-seeder/tree/clam
-        PUSH_SEED("clam.just-dice.com")
-        PUSH_SEED("seed.clams.xyz")
+        PUSH_SEED("")
+        PUSH_SEED("")
 
         // BIP32 version bytes:
         //    public: 0xa8c26d64 ("cpubk...")
@@ -91,14 +102,10 @@ public:
         //
         // http://doc.satoshilabs.com/slips/slip-0044.html gives the CLAM coin type version as 23 (0x80000017)
 
-        base58Prefixes[PUBKEY_ADDRESS] = list_of(137);
-        base58Prefixes[SCRIPT_ADDRESS] = list_of(13);
+        base58Prefixes[PUBKEY_ADDRESS] = list_of(55);
+        base58Prefixes[SCRIPT_ADDRESS] = list_of(8);
         //CLAM Secret key, from old base58.h (release 1.4.2.1)  == 5 + 128
         base58Prefixes[SECRET_KEY]     = list_of(133);
-        //BTC, LTC and DOGE secret keys
-        base58Prefixes[SECRET_KEY_BTC] = list_of(128);
-        base58Prefixes[SECRET_KEY_LTC] = list_of(176);
-        base58Prefixes[SECRET_KEY_DOGE] = list_of(158);
         base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E);
         base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4);
 
