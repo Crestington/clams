@@ -78,17 +78,27 @@ public:
         genesis.nNonce   = 0;
 
         hashGenesisBlock = genesis.GetHash();
-        if ((genesis.GetHash() != hashGenesisBlock) && true)
-        {
-            Logprintf("recalculating params for mainnet.\n");
-            Logprintf("old mainnet genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-            Logprintf("old mainnet genesis nonce: %s\n", genesis.nNonce.ToString().c_str());
-            Logprintf("old mainnet genesis hash:  %s\n", hashGenesisBlock.ToString().c_str());
-            for(genesis.nNonce == 0; genesis.GetHash() > bnProofOfWorkLimit; genesis.nNonce++){ } // deliberately empty for loop; finds nonce value
-            Logprintf("new mainnet genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-            Logprintf("new mainnet genesis nonce: %s\n", genesis.nNonce.ToString().c_str());
-            Logprintf("new mainnet genesis hash: %s\n", genesis.GetHash().ToString().c_str());
+
+
+        if (true  && (genesis.GetHash() != hashGenesisBlock)) {
+
+        // This will figure out a valid hash and Nonce if you're
+        // creating a different genesis block:
+            uint256 hashTarget = CBigNum().SetCompact(genesis.nBits).getuint256();
+            while (genesis.GetHash() > hashTarget)
+               {
+                   ++genesis.nNonce;
+                   if (genesis.nNonce == 0)
+                   {
+                       ++genesis.nTime;
+                   }
+               }
         }
+        LogPrintf("block.GetHash() == %s\n", genesis.GetHash().ToString().c_str());
+        LogPrintf("block.hashMerkleRoot == %s\n", genesis.hashMerkleRoot.ToString().c_str());
+        LogPrintf("block.nTime = %u \n", genesis.nTime);
+        LogPrintf("block.nNonce = %u \n", genesis.nNonce);
+
         assert(hashGenesisBlock == uint256("0x"));
         assert(genesis.hashMerkleRoot == uint256("0x"));
 
