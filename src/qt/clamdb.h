@@ -1,30 +1,30 @@
-#ifndef CLAMDB_H
-#define CLAMDB_H
+#ifndef CONDB_H
+#define CONDB_H
 
 #include <QWidget>
 
 namespace Ui {
-class ClamDB;
+class ConDB;
 }
 class WalletModel;
 class ConcordPage;
 class NotaryPage;
 
-class ClamDB : public QWidget
+class ConDB : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit ClamDB(QWidget *parent = 0);
-    ~ClamDB();
+    explicit ConDB(QWidget *parent = 0);
+    ~ConDB();
 
     void setModel(WalletModel *model);
 
 private:
-    Ui::ClamDB *ui;
+    Ui::ConDB *ui;
     WalletModel *model;
     ConcordPage *concordPage;
     NotaryPage *notaryPage;
 };
 
-#endif // CLAMDB_H
+#endif // CONDB_H

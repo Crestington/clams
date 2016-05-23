@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ClamDB</class>
- <widget class="QWidget" name="ClamDB">
+ <class>ConDB</class>
+ <widget class="QWidget" name="ConDB">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>clamDB</string>
+   <string>conDB</string>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
    <property name="rightMargin">

@@ -17,7 +17,7 @@ class SignVerifyMessageDialog;
 class Notificator;
 class RPCConsole;
 class OptionsDialog;
-class ClamDB;
+class ConDB;
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -74,7 +74,7 @@ private:
     SendCoinsDialog *sendCoinsPage;
     RPCConsole *rpcConsole;
     OptionsDialog *optionsPage;
-    ClamDB *clamdbPage;
+    ConDB *condbPage;
     SignVerifyMessageDialog *signVerifyMessageDialog;
 
     QLabel *labelSquishIcon;    // Left pad
@@ -97,7 +97,7 @@ private:
     QAction *addressBookAction;
     QAction *optionsAction;
     QAction *rpcConsoleAction;
-    QAction *clamdbAction;
+    QAction *condbAction;
 
     // other menu actions
     QMenu *fileMenu;
@@ -180,7 +180,7 @@ private slots:
     void gotoSendCoinsPage();
     void gotoOptionsPage();
     void gotoConsolePage();
-    void gotoClamDbPage();
+    void gotoConDbPage();
 
     void gotoSignMessageTab(QString addr = "");
     void gotoVerifyMessageTab(QString addr = "");

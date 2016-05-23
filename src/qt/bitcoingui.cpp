@@ -15,7 +15,7 @@
 #include "signverifymessagedialog.h"
 #include "optionsdialog.h"
 #include "aboutdialog.h"
-#include "clamdb.h"
+#include "condb.h"
 #include "clientmodel.h"
 #include "walletmodel.h"
 #include "editaddressdialog.h"
@@ -124,7 +124,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     receiveCoinsPage = new AddressBookPage(AddressBookPage::ForEditing, AddressBookPage::ReceivingTab);
     sendCoinsPage = new SendCoinsDialog(this);
     signVerifyMessageDialog = new SignVerifyMessageDialog(this);
-    clamdbPage = new ClamDB(this);
+    condbPage = new ConDB(this);
 
     centralStackedWidget = new QStackedWidget(this);
     centralStackedWidget->addWidget(overviewPage);
@@ -133,7 +133,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     centralStackedWidget->addWidget(receiveCoinsPage);
     centralStackedWidget->addWidget(sendCoinsPage);
     centralStackedWidget->addWidget(rpcConsole);
-    centralStackedWidget->addWidget(clamdbPage);
+    centralStackedWidget->addWidget(condbPage);
     // ! do not add options page, it gets popped on/off on the fly
 
     QWidget *centralWidget = new QWidget();
@@ -260,9 +260,9 @@ void BitcoinGUI::createActions()
     rpcConsoleAction->setToolTip(tr("Open debugging and diagnostic console"));
     rpcConsoleAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
 
-    clamdbAction = new QAction(QIcon(":/icons/history"), tr("c&lamDB"), tabGroup);
-    clamdbAction->setToolTip(tr("Store data in the blockchain"));
-    clamdbAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_8));
+    condbAction = new QAction(QIcon(":/icons/history"), tr("c&onDB"), tabGroup);
+    condbAction->setToolTip(tr("Store data in the blockchain"));
+    condbAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_8));
 
     //styleButton = new QAction(QIcon(":/icons/tx_inout"), tr("&Update Style"), tabGroup);
 
@@ -273,7 +273,7 @@ void BitcoinGUI::createActions()
     connect(addressBookAction, SIGNAL(triggered()), this, SLOT(gotoAddressBookPage()));
     connect(optionsAction, SIGNAL(triggered()), this, SLOT(gotoOptionsPage()));
     connect(rpcConsoleAction, SIGNAL(triggered()), this, SLOT(gotoConsolePage()));
-    connect(clamdbAction, SIGNAL(triggered()), this, SLOT(gotoClamDbPage()));
+    connect(condbAction, SIGNAL(triggered()), this, SLOT(gotoConDbPage()));
 
     quitAction = new QAction(tr("E&xit"), this);
     quitAction->setToolTip(tr("Quit application"));
@@ -465,7 +465,7 @@ void BitcoinGUI::setWalletModel(WalletModel *walletModel)
         addressBookPage->setModel(walletModel->getAddressTableModel());
         receiveCoinsPage->setModel(walletModel->getAddressTableModel());
         sendCoinsPage->setModel(walletModel);
-        clamdbPage->setModel(walletModel);
+        condbPage->setModel(walletModel);
         signVerifyMessageDialog->setModel(walletModel);
 
         setEncryptionStatus(walletModel->getEncryptionStatus());
@@ -864,10 +864,10 @@ void BitcoinGUI::gotoConsolePage()
     showNormalIfMinimized();
 }
 
-void BitcoinGUI::gotoClamDbPage()
+void BitcoinGUI::gotoConDbPage()
 {
-    clamdbAction->setChecked(true);
-    centralStackedWidget->setCurrentWidget(clamdbPage);
+    condbAction->setChecked(true);
+    centralStackedWidget->setCurrentWidget(condbPage);
     toggleExportButton(false);
     showNormalIfMinimized();
 }
