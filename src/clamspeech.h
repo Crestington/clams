@@ -7,9 +7,9 @@
 
 #include "util.h"
 
-extern std::vector<std::string> clamSpeechList;
-extern std::vector<std::string> clamSpeech;
-extern std::vector<std::string> clamourClamSpeech;
+extern std::vector<std::string> conSpeechList;
+extern std::vector<std::string> conSpeech;
+extern std::vector<std::string> clamourConSpeech;
 extern std::vector<std::string> quoteList;
 
 class CWeightedSpeech;

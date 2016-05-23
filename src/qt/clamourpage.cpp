@@ -1,7 +1,7 @@
 #include "clamourpage.h"
 #include "ui_clamourpage.h"
 #include "openssl/sha.h"
-#include "clamspeech.h"
+#include "conspeech.h"
 #include "main.h"
 #include "util.h"
 #include "walletmodel.h"
@@ -81,10 +81,10 @@ void ClamourPage::on_createPetitionButton_clicked()
     if (ui->setVoteCheckBox->isChecked())
     {
         strDefaultStakeSpeech = "clamour " + petitionHash.substr(0, 8);
-        clamourClamSpeech.push_back(strDefaultStakeSpeech);
+        clamourConSpeech.push_back(strDefaultStakeSpeech);
         qDebug() << "saving clamour petitions";
-        if ( !SaveClamourClamSpeech() )
-            qDebug() << "Clamour CLAMSpeech petitions FAILED to save!";
+        if ( !SaveClamourConSpeech() )
+            qDebug() << "Clamour CONspeech petitions FAILED to save!";
         loadVotes();
     }
 }
@@ -97,7 +97,7 @@ void ClamourPage::on_setVotesButton_clicked()
 void ClamourPage::loadVotes()
 {
     QStringList list;
-    for (std::vector<std::string>::iterator it = clamourClamSpeech.begin(); it != clamourClamSpeech.end(); ++it)
+    for (std::vector<std::string>::iterator it = clamourConSpeech.begin(); it != clamourConSpeech.end(); ++it)
     {
         list.append(QString::fromStdString(*it).mid(8));
     }
@@ -108,7 +108,7 @@ void ClamourPage::saveVotes()
 {
     QStringList list = ui->votesEdit->toPlainText().replace("\n", ",").replace(" ", ",").split(',', QString::SkipEmptyParts);
     std::vector<std::string> newSpeeches;
-    clamourClamSpeech.clear();
+    clamourConSpeech.clear();
 
     if (list.length() > 0)
     {
@@ -128,14 +128,14 @@ void ClamourPage::saveVotes()
 
         for (std::vector<std::string>::iterator it = newSpeeches.begin(); it != newSpeeches.end(); ++it)
         {
-            clamourClamSpeech.push_back(*it);
+            clamourConSpeech.push_back(*it);
         }
     }
 
     // save new speech
     qDebug() << "saving clamour petitions";
-    if ( !SaveClamourClamSpeech() )
-        qDebug() << "Clamour CLAMSpeech petitions FAILED to save!";
+    if ( !SaveClamourConSpeech() )
+        qDebug() << "Clamour CONspeech petitions FAILED to save!";
 
     loadVotes();
 }

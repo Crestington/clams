@@ -255,8 +255,8 @@ std::string HelpMessage()
         strUsage += "  -rpcwait               " + _("Wait for RPC server to start") + "\n";
     }
     strUsage += "  -rpcthreads=<n>        " + _("Set the number of threads to service RPC calls (default: 4)") + "\n";
-    strUsage += "  -clamspeech=off        " + _("Set clamspeech=off to turn off random clamspeech quotes in outgoing transactions") + "\n";
-    strUsage += "  -clamstake=off         " + _("Set clamstake=off to turn off random clamspeech quotes when staking") + "\n";
+    strUsage += "  -conspeech=off        " + _("Set conspeech=off to turn off random conspeech quotes in outgoing transactions") + "\n";
+    strUsage += "  -clamstake=off         " + _("Set clamstake=off to turn off random conspeech quotes when staking") + "\n";
     strUsage += "  -blocknotify=<cmd>     " + _("Execute command when the best block changes (%s in cmd is replaced by block hash)") + "\n";
     strUsage += "  -walletnotify=<cmd>    " + _("Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)") + "\n";
     strUsage += "  -stakenotify=<cmd>     " + _("Execute command each time we stake a block") + "\n";
@@ -612,8 +612,8 @@ bool AppInit2(boost::thread_group& threadGroup)
     } // (!fDisableWallet)
 #endif // ENABLE_WALLET
 
-    if(!LoadClamSpeech())
-    	return InitError(_("Failed to load CLAMspeech"));
+    if(!LoadConSpeech())
+    	return InitError(_("Failed to load CONspeech"));
     // ********************************************************* Step 6: network initialization
 
     RegisterNodeSignals(GetNodeSignals());

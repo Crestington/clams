@@ -212,18 +212,18 @@ public:
     int64_t GetImmatureBalance() const;
     int64_t GetStake() const;
     int64_t GetNewMint() const;
-    bool CreateTransaction(const std::vector<std::pair<CScript, int64_t> >& vecSend, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string strCLAMSpeech, const CCoinControl *coinControl=NULL);
-    bool CreateTransaction(CScript scriptPubKey, int64_t nValue, int64_t nCount, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string strCLAMSpeech, const CCoinControl *coinControl=NULL);
-    bool CreateCLAMSpeechTransaction(CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string clamSpeech, const CCoinControl *coinControl=NULL);
+    bool CreateTransaction(const std::vector<std::pair<CScript, int64_t> >& vecSend, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string strCONspeech, const CCoinControl *coinControl=NULL);
+    bool CreateTransaction(CScript scriptPubKey, int64_t nValue, int64_t nCount, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string strCONspeech, const CCoinControl *coinControl=NULL);
+    bool CreateCONspeechTransaction(CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string conSpeech, const CCoinControl *coinControl=NULL);
     bool CommitTransaction(CWalletTx& wtxNew, CReserveKey& reservekey);
 
     bool GetExpectedStakeTime(uint64_t& nExpected);
     bool GetStakeWeight(uint64_t& nWeight);
     bool CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int64_t nSearchInterval, int64_t nFees, CTransaction& txNew, CKey& key);
 
-    std::string SendMoney(CScript scriptPubKey, int64_t nValue, int64_t nCount, CWalletTx& wtxNew, std::string strCLAMSpeech = "", bool fAskFee=false);
-    std::string SendMoneyToDestination(const CTxDestination &address, int64_t nValue, int64_t nCount, CWalletTx& wtxNew, std::string strCLAMSpeech = "", bool fAskFee=false);
-    std::string SendCLAMSpeech(CWalletTx& wtxNew, std::string clamSpeech, std::string prefix = "", bool fAskFee=false);
+    std::string SendMoney(CScript scriptPubKey, int64_t nValue, int64_t nCount, CWalletTx& wtxNew, std::string strCONspeech = "", bool fAskFee=false);
+    std::string SendMoneyToDestination(const CTxDestination &address, int64_t nValue, int64_t nCount, CWalletTx& wtxNew, std::string strCONspeech = "", bool fAskFee=false);
+    std::string SendCONspeech(CWalletTx& wtxNew, std::string conSpeech, std::string prefix = "", bool fAskFee=false);
 
     bool NewKeyPool();
     bool TopUpKeyPool(unsigned int nSize = 0);

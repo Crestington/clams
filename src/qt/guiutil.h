@@ -7,9 +7,9 @@
 
 // UI extern settings defined in optionsmodel.cpp
 extern bool fUseClamTheme;
-extern bool fUseClamSpeech;
-extern bool fUseClamSpeechRandom;
-extern int nClamSpeechIndex;
+extern bool fUseConSpeech;
+extern bool fUseConSpeechRandom;
+extern int nConSpeechIndex;
 extern int nStyleSheetVersion;
 
 const int CURRENT_STYLESHEET_VERSION = 1;

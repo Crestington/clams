@@ -228,7 +228,7 @@ TransactionTableModel::TransactionTableModel(CWallet* wallet, WalletModel *paren
         walletModel(parent),
         priv(new TransactionTablePriv(wallet, this))
 {
-    columns << QString() << tr("Date") << tr("Type") << tr("Address") << tr("ClamSpeech") << tr("Amount");
+    columns << QString() << tr("Date") << tr("Type") << tr("Address") << tr("ConSpeech") << tr("Amount");
 
     priv->refreshWallet();
 
@@ -412,23 +412,23 @@ QString TransactionTableModel::formatTxToAddress(const TransactionRecord *wtx, b
     }
 }
 
-QString TransactionTableModel::formatCLAMSpeech(const TransactionRecord *wtx, bool tooltip) const
+QString TransactionTableModel::formatCONspeech(const TransactionRecord *wtx, bool tooltip) const
 {
     switch(wtx->type)
     {
     case TransactionRecord::RecvFromOther:
-        return QString::fromStdString(wtx->clamspeech);
+        return QString::fromStdString(wtx->conspeech);
     case TransactionRecord::RecvWithAddress:
-        return QString::fromStdString(wtx->clamspeech);
+        return QString::fromStdString(wtx->conspeech);
     case TransactionRecord::SendToAddress:
-        return QString::fromStdString(wtx->clamspeech);
+        return QString::fromStdString(wtx->conspeech);
     case TransactionRecord::SendToOther:
-        return QString::fromStdString(wtx->clamspeech);
+        return QString::fromStdString(wtx->conspeech);
     case TransactionRecord::SendToSelf:
     case TransactionRecord::Notary:
     case TransactionRecord::NotarySendToAddress:
     case TransactionRecord::NotarySendToOther:
-        return QString::fromStdString(wtx->clamspeech);
+        return QString::fromStdString(wtx->conspeech);
     case TransactionRecord::Generated:
          return "";
       default:
@@ -548,8 +548,8 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
             return formatTxToAddress(rec, false);
         case Amount:
             return formatTxAmount(rec);
-        case CLAMSpeech:
-             return formatCLAMSpeech(rec, false);
+        case CONspeech:
+             return formatCONspeech(rec, false);
         }
         break;
     case Qt::EditRole:
@@ -566,8 +566,8 @@ QVariant TransactionTableModel::data(const QModelIndex &index, int role) const
             return formatTxToAddress(rec, true);
         case Amount:
             return rec->credit + rec->debit;
-        case CLAMSpeech:
-            return formatCLAMSpeech(rec, false);
+        case CONspeech:
+            return formatCONspeech(rec, false);
         }
         break;
     case Qt::ToolTipRole:
@@ -642,7 +642,7 @@ QVariant TransactionTableModel::headerData(int section, Qt::Orientation orientat
                 return tr("Destination address of transaction.");
             case Amount:
                 return tr("Amount removed from or added to balance.");
-            case CLAMSpeech:
+            case CONspeech:
                 return tr("Transaction comment.");
             }
         }

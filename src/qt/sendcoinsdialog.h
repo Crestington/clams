@@ -34,7 +34,7 @@ public:
     bool handleURI(const QString &uri);
 
 signals:
-    void onClamSpeechUpdated();
+    void onConSpeechUpdated();
 
 public slots:
     // UI Ready notification
@@ -48,16 +48,16 @@ public slots:
     void setBalance(qint64 balance, qint64 stake, qint64 unconfirmedBalance, qint64 immatureBalance);
 
 private:
-    void loadClamSpeech();
+    void loadConSpeech();
 
     Ui::SendCoinsDialog *ui;
     WalletModel *model;
     bool fNewRecipientAllowed;
-    int clamSpeechQuoteCount;
+    int conSpeechQuoteCount;
 
 private slots:
     void on_sendButton_clicked();
-    void clamSpeechIndexChanged(const int &index);
+    void conSpeechIndexChanged(const int &index);
     void removeEntry(SendCoinsEntry* entry);
     void updateDisplayUnit();
     void coinControlFeatureChanged(bool);

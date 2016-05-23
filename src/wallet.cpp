@@ -6,7 +6,7 @@
 #include "wallet.h"
 
 #include "base58.h"
-#include "clamspeech.h"
+#include "conspeech.h"
 #include "coincontrol.h"
 #include "kernel.h"
 #include "net.h"
@@ -1811,7 +1811,7 @@ bool CWallet::SelectCoinsForStaking(int64_t nTargetValue, unsigned int nSpendTim
     return true;
 }
 
-bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string strCLAMSpeech, const CCoinControl* coinControl)
+bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string strCONspeech, const CCoinControl* coinControl)
 {
     int64_t nValue = 0;
     BOOST_FOREACH (const PAIRTYPE(CScript, int64_t)& s, vecSend)
@@ -1829,13 +1829,13 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend, 
 
     wtxNew.BindWallet(this);
 
-    // set clamSpeech when creating a transaction
-    if (strCLAMSpeech.empty() && !(mapArgs["-clamspeech"] == "off"))
-        strCLAMSpeech = GetDefaultClamSpeech();
+    // set conSpeech when creating a transaction
+    if (strCONspeech.empty() && !(mapArgs["-conspeech"] == "off"))
+        strCONspeech = GetDefaultConSpeech();
 
-    wtxNew.strCLAMSpeech = strCLAMSpeech;
-    if (wtxNew.strCLAMSpeech.length() > MAX_TX_COMMENT_LEN)
-        wtxNew.strCLAMSpeech.resize(MAX_TX_COMMENT_LEN);
+    wtxNew.strCONspeech = strCONspeech;
+    if (wtxNew.strCONspeech.length() > MAX_TX_COMMENT_LEN)
+        wtxNew.strCONspeech.resize(MAX_TX_COMMENT_LEN);
 
     {
         LOCK2(cs_main, cs_wallet);
@@ -1970,12 +1970,12 @@ bool CWallet::CreateTransaction(const vector<pair<CScript, int64_t> >& vecSend, 
     return true;
 }
 
-bool CWallet::CreateTransaction(CScript scriptPubKey, int64_t nValue, int64_t nCount, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string strCLAMSpeech, const CCoinControl* coinControl)
+bool CWallet::CreateTransaction(CScript scriptPubKey, int64_t nValue, int64_t nCount, CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string strCONspeech, const CCoinControl* coinControl)
 {
     vector< pair<CScript, int64_t> > vecSend;
     while (nCount--)
         vecSend.push_back(make_pair(scriptPubKey, nValue));
-    return CreateTransaction(vecSend, wtxNew, reservekey, nFeeRet, strCLAMSpeech, coinControl);
+    return CreateTransaction(vecSend, wtxNew, reservekey, nFeeRet, strCONspeech, coinControl);
 }
 
 bool CWallet::GetStakeWeight(uint64_t& nWeight)
@@ -2241,17 +2241,17 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
             nCredit += nReward;
     }
 
-    // set clamSpeech when staking a block
+    // set conSpeech when staking a block
     if (!(mapArgs["-clamstake"] == "off")) {
         if (weightedStakeSpeech.size()) {
-            txNew.strCLAMSpeech = weightedStakeSpeech.select(hashProofOfStake.Get64());
-        } else if(GetDefaultClamourClamSpeech() == "") {
-            txNew.strCLAMSpeech = GetDefaultClamSpeech();
+            txNew.strCONspeech = weightedStakeSpeech.select(hashProofOfStake.Get64());
+        } else if(GetDefaultClamourConSpeech() == "") {
+            txNew.strCONspeech = GetDefaultConSpeech();
         } else {
-            txNew.strCLAMSpeech = GetDefaultClamourClamSpeech();
+            txNew.strCONspeech = GetDefaultClamourConSpeech();
         }
-        if (txNew.strCLAMSpeech.length() > MAX_TX_COMMENT_LEN)
-            txNew.strCLAMSpeech.resize(MAX_TX_COMMENT_LEN);
+        if (txNew.strCONspeech.length() > MAX_TX_COMMENT_LEN)
+            txNew.strCONspeech.resize(MAX_TX_COMMENT_LEN);
     }
 
     CScript scriptStakeTo;
@@ -2437,22 +2437,22 @@ string CWallet::SendMoney(CScript scriptPubKey, int64_t nValue, int64_t nCount, 
     return "";
 }
 
-string CWallet::SendCLAMSpeech(CWalletTx& wtxNew, string clamSpeech, string prefix, bool fAskFee)
+string CWallet::SendCONspeech(CWalletTx& wtxNew, string conSpeech, string prefix, bool fAskFee)
 { 
     if (prefix == "notary") 
     {
         uint256 hash;
-        hash.SetHex(clamSpeech);
-        clamSpeech = "notary " + hash.GetHex();
+        hash.SetHex(conSpeech);
+        conSpeech = "notary " + hash.GetHex();
 
     } 
     else if (prefix == "clamour") 
     {
-        clamSpeech = "create clamour " + clamSpeech;
+        conSpeech = "create clamour " + conSpeech;
     } 
     else if (prefix.length() > 0)
     {
-        clamSpeech = prefix + clamSpeech;
+        conSpeech = prefix + conSpeech;
     } 
 
     CReserveKey reservekey(this);
@@ -2476,7 +2476,7 @@ string CWallet::SendCLAMSpeech(CWalletTx& wtxNew, string clamSpeech, string pref
         LogPrintf("SendNotary() : %s", strError);
         return strError;
     }
-    if (!CreateCLAMSpeechTransaction(wtxNew, reservekey, nFeeRequired, clamSpeech))
+    if (!CreateCONspeechTransaction(wtxNew, reservekey, nFeeRequired, conSpeech))
     {
         string strError;
         if (nFeeRequired > GetBalance())
@@ -2499,14 +2499,14 @@ string CWallet::SendCLAMSpeech(CWalletTx& wtxNew, string clamSpeech, string pref
 
 }
 
-bool CWallet::CreateCLAMSpeechTransaction(CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string clamSpeech, const CCoinControl* coinControl) 
+bool CWallet::CreateCONspeechTransaction(CWalletTx& wtxNew, CReserveKey& reservekey, int64_t& nFeeRet, std::string conSpeech, const CCoinControl* coinControl) 
 {
 	//vector< pair<CScript, int64_t> > vecSend;
 	//vecSend.push_back(make_pair(scriptPubKey, nValue));
 
 	wtxNew.BindWallet(this);
 
-    wtxNew.strCLAMSpeech = clamSpeech;   
+    wtxNew.strCONspeech = conSpeech;   
 
 	{
 		LOCK2(cs_main, cs_wallet);
@@ -3220,7 +3220,7 @@ void CWallet::GetKeyBirthTimes(std::map<CKeyID, int64_t> &mapKeyBirth) const {
 void CWallet::SearchNotaryTransactions(uint256 hash, std::vector<std::pair<std::string, int> >& vTxResults)
 {
     int blockstogoback = pindexBest->nHeight - 362500;
-    std::string matchingCLAMSpeech = "notary " + hash.GetHex();
+    std::string matchingCONspeech = "notary " + hash.GetHex();
 
     const CBlockIndex* pindexFirst = pindexBest;
     for (int i = 0; pindexFirst && i < blockstogoback; i++) {
@@ -3230,7 +3230,7 @@ void CWallet::SearchNotaryTransactions(uint256 hash, std::vector<std::pair<std::
 
         BOOST_FOREACH (const CTransaction& tx, block.vtx)
         {
-            if (tx.strCLAMSpeech == matchingCLAMSpeech) {
+            if (tx.strCONspeech == matchingCONspeech) {
                 vTxResults.push_back( std::make_pair(tx.GetHash().GetHex(), pindexFirst->nHeight) );
             }
         }

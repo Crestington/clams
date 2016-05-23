@@ -9,7 +9,7 @@
 #include "monitoreddatamapper.h"
 #include "netbase.h"
 #include "optionsmodel.h"
-#include "clamspeech.h"
+#include "conspeech.h"
 #include "guiutil.h"
 #include "util.h"
 
@@ -95,7 +95,7 @@ OptionsDialog::OptionsDialog(QWidget *parent) :
     mapper->setOrientation(Qt::Vertical);
 
     /* map quote editor to enable apply button */
-    connect( ui->clamSpeechEditbox, SIGNAL(textChanged()), this, SLOT(enableApplyButton()) );
+    connect( ui->conSpeechEditbox, SIGNAL(textChanged()), this, SLOT(enableApplyButton()) );
     /* enable apply button when data modified */
     connect(mapper, SIGNAL(viewModified()), this, SLOT(enableApplyButton()));
     /* disable apply button when new data loaded */
@@ -161,39 +161,39 @@ void OptionsDialog::setMapper()
     mapper->addMapping(ui->coinControlFeatures, OptionsModel::CoinControlFeatures);
     mapper->addMapping(ui->minimizeCoinAge, OptionsModel::MinimizeCoinAge);
     mapper->addMapping(ui->useClamTheme, OptionsModel::UseClamTheme);
-    mapper->addMapping(ui->clamSpeechGroupbox, OptionsModel::UseClamSpeech);
-    mapper->addMapping(ui->clamSpeechRandomCheckbox, OptionsModel::UseClamSpeechRandom);
+    mapper->addMapping(ui->conSpeechGroupbox, OptionsModel::UseConSpeech);
+    mapper->addMapping(ui->conSpeechRandomCheckbox, OptionsModel::UseConSpeechRandom);
 }
 
 void OptionsDialog::loadClamQuotes()
 {
-    if ( !fUseClamSpeech )
+    if ( !fUseConSpeech )
         return;
 
-    ui->clamSpeechEditbox->clear();
-    for ( ulong i = 0; i < clamSpeech.size(); i++ )
-        ui->clamSpeechEditbox->appendPlainText( QString::fromStdString( clamSpeech.at(i) ) );
+    ui->conSpeechEditbox->clear();
+    for ( ulong i = 0; i < conSpeech.size(); i++ )
+        ui->conSpeechEditbox->appendPlainText( QString::fromStdString( conSpeech.at(i) ) );
 }
 
 void OptionsDialog::saveClamQuotes()
 {
-    if ( !fUseClamSpeech )
+    if ( !fUseConSpeech )
         return;
 
-    clamSpeech.clear();
-    QStringList list = ui->clamSpeechEditbox->toPlainText().split( '\n' );
+    conSpeech.clear();
+    QStringList list = ui->conSpeechEditbox->toPlainText().split( '\n' );
 
     foreach ( const QString &strLine, list )
         if ( !strLine.isEmpty() )
-            clamSpeech.push_back( strLine.trimmed().toStdString() );
+            conSpeech.push_back( strLine.trimmed().toStdString() );
 
     // save clam quotes
-    qDebug() << "saving clamspeech";
-    if ( !SaveClamSpeech() )
-        qDebug() << "CLAMSpeech FAILED to save!";
+    qDebug() << "saving conspeech";
+    if ( !SaveConSpeech() )
+        qDebug() << "CONspeech FAILED to save!";
 
     // send signal to BitcoinGUI->SendCoinsDialog
-    emit onClamSpeechUpdated();
+    emit onConSpeechUpdated();
 }
 
 void OptionsDialog::enableApplyButton()

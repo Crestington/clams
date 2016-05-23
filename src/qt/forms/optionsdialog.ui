@@ -422,13 +422,13 @@
      </widget>
      <widget class="QWidget" name="tabSpeech">
       <attribute name="title">
-       <string>CLAMSpeech</string>
+       <string>CONspeech</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_3">
        <item row="0" column="0">
-        <widget class="QGroupBox" name="clamSpeechGroupbox">
+        <widget class="QGroupBox" name="conSpeechGroupbox">
          <property name="title">
-          <string>Enable CLAMSpeech</string>
+          <string>Enable CONspeech</string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -445,14 +445,14 @@
            </widget>
           </item>
           <item row="2" column="0">
-           <widget class="QPlainTextEdit" name="clamSpeechEditbox">
+           <widget class="QPlainTextEdit" name="conSpeechEditbox">
             <property name="lineWrapMode">
              <enum>QPlainTextEdit::NoWrap</enum>
             </property>
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="QCheckBox" name="clamSpeechRandomCheckbox">
+           <widget class="QCheckBox" name="conSpeechRandomCheckbox">
             <property name="text">
              <string>Autoselect Random Quote</string>
             </property>

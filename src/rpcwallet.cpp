@@ -72,7 +72,7 @@ void WalletTxToJSON(const CWalletTx& wtx, UniValue& entry)
     entry.push_back(Pair("txid", wtx.GetHash().GetHex()));
     entry.push_back(Pair("time", (int64_t)wtx.GetTxTime()));
     entry.push_back(Pair("timereceived", (int64_t)wtx.nTimeReceived));
-    entry.push_back(Pair("tx-comment", wtx.strCLAMSpeech));
+    entry.push_back(Pair("tx-comment", wtx.strCONspeech));
     BOOST_FOREACH(const PAIRTYPE(string,string)& item, wtx.mapValue)
         entry.push_back(Pair(item.first, item.second));
 }
@@ -308,18 +308,18 @@ UniValue sendtoaddress(const UniValue& params, bool fHelp)
         wtx.mapValue["to"]      = params[3].get_str();
 
      // Transaction comment
-    std::string clamspeech;
+    std::string conspeech;
     if (params.size() > 4 && params[4].isNull() && !params[4].get_str().empty())
     {
-        clamspeech = params[4].get_str();
-        if (clamspeech.length() > MAX_TX_COMMENT_LEN)
-            clamspeech.resize(MAX_TX_COMMENT_LEN);
+        conspeech = params[4].get_str();
+        if (conspeech.length() > MAX_TX_COMMENT_LEN)
+            conspeech.resize(MAX_TX_COMMENT_LEN);
      }
 
     if (pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
 
-    string strError = pwalletMain->SendMoneyToDestination(address.Get(), nAmount, nCount, wtx, clamspeech);
+    string strError = pwalletMain->SendMoneyToDestination(address.Get(), nAmount, nCount, wtx, conspeech);
     if (strError != "")
         throw JSONRPCError(RPC_WALLET_ERROR, strError);
 
@@ -745,12 +745,12 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
     if (params.size() > 5 && params[5].isNull() && !params[5].get_str().empty())
         wtx.mapValue["to"]      = params[5].get_str();
 
-    std::string clamspeech;
+    std::string conspeech;
     if (params.size() > 6 && params[6].isNull() && !params[6].get_str().empty())
     {
-        clamspeech = params[6].get_str();
-        if (clamspeech.length() > MAX_TX_COMMENT_LEN)
-            clamspeech.resize(MAX_TX_COMMENT_LEN);
+        conspeech = params[6].get_str();
+        if (conspeech.length() > MAX_TX_COMMENT_LEN)
+            conspeech.resize(MAX_TX_COMMENT_LEN);
     }
 
     EnsureWalletIsUnlocked();
@@ -761,7 +761,7 @@ UniValue sendfrom(const UniValue& params, bool fHelp)
         throw JSONRPCError(RPC_WALLET_INSUFFICIENT_FUNDS, "Account has insufficient funds");
 
     // Send
-    string strError = pwalletMain->SendMoneyToDestination(address.Get(), nAmount, nCount, wtx, clamspeech);
+    string strError = pwalletMain->SendMoneyToDestination(address.Get(), nAmount, nCount, wtx, conspeech);
     if (strError != "")
         throw JSONRPCError(RPC_WALLET_ERROR, strError);
 
@@ -784,13 +784,13 @@ UniValue sendmany(const UniValue& params, bool fHelp)
         nMinDepth = params[2].get_int();
 
     CWalletTx wtx;
-    std::string strCLAMSpeech;
+    std::string strCONspeech;
 
     wtx.strFromAccount = strAccount;
     if (params.size() > 3 && params[3].isNull() && !params[3].get_str().empty())
         wtx.mapValue["comment"] = params[3].get_str();
     if (params.size() > 4 && params[4].isNull() && !params[4].get_str().empty())
-        strCLAMSpeech = params[4].get_str();
+        strCONspeech = params[4].get_str();
 
     set<CBitcoinAddress> setAddress;
     vector<pair<CScript, int64_t> > vecSend;
@@ -824,7 +824,7 @@ UniValue sendmany(const UniValue& params, bool fHelp)
     // Send
     CReserveKey keyChange(pwalletMain);
     int64_t nFeeRequired = 0;
-    bool fCreated = pwalletMain->CreateTransaction(vecSend, wtx, keyChange, nFeeRequired, strCLAMSpeech);
+    bool fCreated = pwalletMain->CreateTransaction(vecSend, wtx, keyChange, nFeeRequired, strCONspeech);
     if (!fCreated)
     {
         if (totalAmount + nFeeRequired > pwalletMain->GetBalance())
@@ -1447,7 +1447,7 @@ UniValue getnotarytransaction(const UniValue& params, bool fHelp)
 
     	BOOST_FOREACH (const CTransaction& tx, block.vtx)
     	{	
-		if (tx.strCLAMSpeech == hash.GetHex()) {
+		if (tx.strCONspeech == hash.GetHex()) {
     			UniValue entry(UniValue::VOBJ);
 			notaryFound = true;
 			
@@ -1503,7 +1503,7 @@ UniValue sendnotarytransaction(const UniValue& params, bool fHelp)
     if (pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
 
-    string strError = pwalletMain->SendCLAMSpeech(wtx, nHash, prefix);
+    string strError = pwalletMain->SendCONspeech(wtx, nHash, prefix);
     if (strError != "")
         throw JSONRPCError(RPC_WALLET_ERROR, strError);
 
@@ -1525,7 +1525,7 @@ UniValue createclamour(const UniValue& params, bool fHelp)
     CWalletTx wtx;
     std::string prefix = "clamour";
     std::string strHash = params[0].get_str();
-    std::string clamSpeech = "";
+    std::string conSpeech = "";
     std::string url = "";
 
     if (params.size() > 1) 
@@ -1546,11 +1546,11 @@ UniValue createclamour(const UniValue& params, bool fHelp)
             strHash = ss.str();
     }
 
-    clamSpeech = strHash + url;
+    conSpeech = strHash + url;
     if (pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
 
-    string strError = pwalletMain->SendCLAMSpeech(wtx, clamSpeech, prefix);
+    string strError = pwalletMain->SendCONspeech(wtx, conSpeech, prefix);
     if (strError != "")
         throw JSONRPCError(RPC_WALLET_ERROR, strError);
 

@@ -54,7 +54,7 @@ void TxToJSON(const CTransaction& tx, const uint256 hashBlock, UniValue& entry)
     entry.push_back(Pair("locktime", (int64_t)tx.nLockTime));
     if (tx.nVersion > CTransaction::LEGACY_VERSION_1)
     {
-      entry.push_back(Pair("clam-speech", tx.strCLAMSpeech));
+      entry.push_back(Pair("clam-speech", tx.strCONspeech));
     }
 
     UniValue vin(UniValue::VARR);
@@ -261,14 +261,14 @@ UniValue createrawtransaction(const UniValue& params, bool fHelp)
 
     CTransaction rawTx;
 
-    // set clamSpeech when creating a raw transaction
+    // set conSpeech when creating a raw transaction
     if (params.size() == 3)
-        rawTx.strCLAMSpeech = params[2].get_str();
-    else if (mapArgs["-clamspeech"] != "off")
-        rawTx.strCLAMSpeech = GetDefaultClamSpeech();
+        rawTx.strCONspeech = params[2].get_str();
+    else if (mapArgs["-conspeech"] != "off")
+        rawTx.strCONspeech = GetDefaultConSpeech();
 
-    if (rawTx.strCLAMSpeech.length() > MAX_TX_COMMENT_LEN)
-        rawTx.strCLAMSpeech.resize(MAX_TX_COMMENT_LEN);
+    if (rawTx.strCONspeech.length() > MAX_TX_COMMENT_LEN)
+        rawTx.strCONspeech.resize(MAX_TX_COMMENT_LEN);
 
     for (unsigned int idx = 0; idx < inputs.size(); idx++)
     {

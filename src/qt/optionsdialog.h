@@ -26,7 +26,7 @@ public:
 
 signals:
     void proxyIpValid(QValidatedLineEdit *object, bool fValid);
-    void onClamSpeechUpdated();
+    void onConSpeechUpdated();
 
 protected:
     bool eventFilter(QObject *object, QEvent *event);

@@ -6,7 +6,7 @@
 #include "util.h"
 
 #include "chainparams.h"
-#include "clamspeech.h"
+#include "conspeech.h"
 #include "random.h"
 #include "sync.h"
 #include "ui_interface.h"
@@ -15,7 +15,7 @@
 #include "openssl/sha.h"
 
 #include <algorithm>
-//For clamspeech until beter solution derivied.
+//For conspeech until beter solution derivied.
 #include <iostream>
 #include <iterator>
 #include <fstream>
@@ -1084,11 +1084,11 @@ void CreatePidFile(const boost::filesystem::path &path, pid_t pid)
 }
 #endif
 
-boost::filesystem::path GetClamSpeechFile()
+boost::filesystem::path GetConSpeechFile()
 {
-    boost::filesystem::path pathClamSpeechFile(GetArg("-clamspeech", "clamspeech.txt"));
-    if (!pathClamSpeechFile.is_complete()) pathClamSpeechFile = GetDataDir() / pathClamSpeechFile;
-    return pathClamSpeechFile;
+    boost::filesystem::path pathConSpeechFile(GetArg("-conspeech", "conspeech.txt"));
+    if (!pathConSpeechFile.is_complete()) pathConSpeechFile = GetDataDir() / pathConSpeechFile;
+    return pathConSpeechFile;
 }
 
 boost::filesystem::path GetQuoteFile()
@@ -1098,9 +1098,9 @@ boost::filesystem::path GetQuoteFile()
     return pathQuoteFile;
 }
 
-boost::filesystem::path GetClamourClamSpeechFile()
+boost::filesystem::path GetClamourConSpeechFile()
 {
-    boost::filesystem::path pathClamourSpeechFile(GetArg("-clamourclamspeech", "clamourclamspeech.txt"));
+    boost::filesystem::path pathClamourSpeechFile(GetArg("-clamourconspeech", "clamourconspeech.txt"));
     if (!pathClamourSpeechFile.is_complete()) pathClamourSpeechFile = GetDataDir() / pathClamourSpeechFile;
     return pathClamourSpeechFile;
 }
@@ -1114,18 +1114,18 @@ string HashToString(unsigned char* hash,int n) {
     return string(outputBuffer);
 }
 
-bool LoadClamSpeech()
+bool LoadConSpeech()
 {
 
-    if (clamSpeechList.empty())
+    if (conSpeechList.empty())
 	CSLoad();
 
-    // If file doesn't exist, create it using the clamSpeech quote list
-    if (!boost::filesystem::exists(GetClamSpeechFile())) {
-        FILE* file = fopen(GetClamSpeechFile().string().c_str(), "w");
+    // If file doesn't exist, create it using the conSpeech quote list
+    if (!boost::filesystem::exists(GetConSpeechFile())) {
+        FILE* file = fopen(GetConSpeechFile().string().c_str(), "w");
         if (file)
         {
-	    for(std::vector<std::string>::iterator it = clamSpeechList.begin(); it != clamSpeechList.end(); it++)
+	    for(std::vector<std::string>::iterator it = conSpeechList.begin(); it != conSpeechList.end(); it++)
             {
                 fprintf(file, "%s\n", it->c_str());
             }
@@ -1133,8 +1133,8 @@ bool LoadClamSpeech()
         }   
     }
 
-    clamSpeech.clear();
-    std::ifstream speechfile(GetClamSpeechFile().string().c_str());
+    conSpeech.clear();
+    std::ifstream speechfile(GetConSpeechFile().string().c_str());
 
     if(!speechfile) //Always test the file open.
         return false;
@@ -1142,50 +1142,50 @@ bool LoadClamSpeech()
     string line;
     while (getline(speechfile, line, '\n'))
     {
-        clamSpeech.push_back (line);
+        conSpeech.push_back (line);
     }
 
-    LoadClamourClamSpeech();
+    LoadClamourConSpeech();
     
     return true;   
 }
 
-string GetRandomClamSpeech() {
-    if(clamSpeech.empty()) {
-        if(!LoadClamSpeech()) 
+string GetRandomConSpeech() {
+    if(conSpeech.empty()) {
+        if(!LoadConSpeech()) 
             return "This is a deafult quote that gets added in the event of all else failing";
     } 
-    int index = rand() % clamSpeech.size();
-    return clamSpeech[index];
+    int index = rand() % conSpeech.size();
+    return conSpeech[index];
 }
 
-string GetDefaultClamSpeech() {
+string GetDefaultConSpeech() {
     if (strDefaultSpeech == "")
-        return GetRandomClamSpeech();
+        return GetRandomConSpeech();
 
     return strDefaultSpeech;
 }
 
-string GetRandomClamourClamSpeech() {
-    if (clamourClamSpeech.empty())
+string GetRandomClamourConSpeech() {
+    if (clamourConSpeech.empty())
         return "";
-    int index = rand() % clamourClamSpeech.size();
-    return clamourClamSpeech[index];
+    int index = rand() % clamourConSpeech.size();
+    return clamourConSpeech[index];
 }
 
-string GetDefaultClamourClamSpeech() {
+string GetDefaultClamourConSpeech() {
     if (strDefaultStakeSpeech == "")
-        return GetRandomClamourClamSpeech();
+        return GetRandomClamourConSpeech();
     return strDefaultStakeSpeech;
 }
 
-bool SaveClamSpeech() 
+bool SaveConSpeech() 
 {
-    if (boost::filesystem::exists(GetClamSpeechFile())) {
-        FILE* file = fopen(GetClamSpeechFile().string().c_str(), "w");
+    if (boost::filesystem::exists(GetConSpeechFile())) {
+        FILE* file = fopen(GetConSpeechFile().string().c_str(), "w");
         if (file)
         {
-        for(std::vector<std::string>::iterator it = clamSpeech.begin(); it != clamSpeech.end(); it++)
+        for(std::vector<std::string>::iterator it = conSpeech.begin(); it != conSpeech.end(); it++)
             {
                 fprintf(file, "%s\n", it->c_str());
             }
@@ -1197,10 +1197,10 @@ bool SaveClamSpeech()
     return true; 
 }
 
-bool LoadClamourClamSpeech()
+bool LoadClamourConSpeech()
 {
-    clamourClamSpeech.clear();
-    std::ifstream speechfile(GetClamourClamSpeechFile().string().c_str());
+    clamourConSpeech.clear();
+    std::ifstream speechfile(GetClamourConSpeechFile().string().c_str());
 
     if(!speechfile) //Always test the file open.
         return false;
@@ -1208,18 +1208,18 @@ bool LoadClamourClamSpeech()
     string line;
     while (getline(speechfile, line, '\n'))
     {
-        clamourClamSpeech.push_back (line);
+        clamourConSpeech.push_back (line);
     }
     
     return true;
 }
 
-bool SaveClamourClamSpeech()
+bool SaveClamourConSpeech()
 {
-    FILE* file = fopen(GetClamourClamSpeechFile().string().c_str(), "w");
+    FILE* file = fopen(GetClamourConSpeechFile().string().c_str(), "w");
     if (file)
     {
-        for (std::vector<std::string>::iterator it = clamourClamSpeech.begin(); it != clamourClamSpeech.end(); it++) {
+        for (std::vector<std::string>::iterator it = clamourConSpeech.begin(); it != clamourConSpeech.end(); it++) {
             fprintf(file, "%s\n", it->c_str());
         }
         fclose(file);
@@ -1232,7 +1232,7 @@ bool SaveClamourClamSpeech()
 bool LoadQuoteList()
 {
 
-    // If file doesn't exist, create it using the clamSpeech quote list
+    // If file doesn't exist, create it using the conSpeech quote list
     if (!boost::filesystem::exists(GetQuoteFile())) {
         FILE* file = fopen(GetQuoteFile().string().c_str(), "w");
         if (file)

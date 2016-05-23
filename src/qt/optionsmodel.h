@@ -32,9 +32,9 @@ public:
         CoinControlFeatures, // bool
         MinimizeCoinAge,   // bool
         UseClamTheme,      // bool
-        UseClamSpeech,     // bool
-        UseClamSpeechRandom, // bool
-        ClamSpeechIndex,   // int
+        UseConSpeech,     // bool
+        UseConSpeechRandom, // bool
+        ConSpeechIndex,   // int
         OptionIDRowCount,
     };
 

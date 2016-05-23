@@ -287,24 +287,24 @@ bool CTransaction::ReadFromDisk(COutPoint prevout)
 
 bool CTransaction::IsCreateClamour(string& strHash, string& strURL) const
 {
-    size_t len = strCLAMSpeech.length();
+    size_t len = strCONspeech.length();
 
-    if (strCLAMSpeech.substr(0, 15) == "create clamour ")
-        LogPrintf("checking speech length %d : %s\n", len, strCLAMSpeech);
+    if (strCONspeech.substr(0, 15) == "create clamour ")
+        LogPrintf("checking speech length %d : %s\n", len, strCONspeech);
 
     // "create clamour ..." speech must begin with those 15 characters, and have a 64 character hash after it
-    if (len < 15+64 || strCLAMSpeech.substr(0, 15) != "create clamour ")
+    if (len < 15+64 || strCONspeech.substr(0, 15) != "create clamour ")
         return false;
 
     strURL = "";
     strHash = "";
 
-    size_t pos = strCLAMSpeech.find_first_not_of("0123456789abcdef", 15);
+    size_t pos = strCONspeech.find_first_not_of("0123456789abcdef", 15);
 
     // if the hex goes all the way to the end, there's no URL comment, and the length must be exactly 15+64 or the hex is too long
     if (pos == string::npos) {
         if (len == 15+64) {
-            strHash = strCLAMSpeech.substr(15, 64);
+            strHash = strCONspeech.substr(15, 64);
             return true;
         }
 
@@ -314,16 +314,16 @@ bool CTransaction::IsCreateClamour(string& strHash, string& strURL) const
     if (pos != 15+64)
         return false;
 
-    strHash = strCLAMSpeech.substr(15, 64);
+    strHash = strCONspeech.substr(15, 64);
 
     // optional URL is separated from the hash by a single space
-    if (strCLAMSpeech[pos] != ' ')
+    if (strCONspeech[pos] != ' ')
         return true;
 
     // and ended by whitespace
-    size_t pos2 = strCLAMSpeech.find_first_of(" \t\n\r", ++pos);
+    size_t pos2 = strCONspeech.find_first_of(" \t\n\r", ++pos);
 
-    strURL = strCLAMSpeech.substr(pos, pos2 == string::npos ? string::npos : pos2 - pos);
+    strURL = strCONspeech.substr(pos, pos2 == string::npos ? string::npos : pos2 - pos);
     return true;
 }
 
@@ -372,7 +372,7 @@ bool IsStandardTx(const CTransaction& tx, string& reason)
     }
 
     // Disallow large transaction comments
-    if (tx.strCLAMSpeech.length() > MAX_TX_COMMENT_LEN) {
+    if (tx.strCONspeech.length() > MAX_TX_COMMENT_LEN) {
         reason = "tx-comment-too-large";
         return false;
     }
@@ -1866,7 +1866,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
     if (nStakeReward)
         StakeToWallets(vtx[1].vout[1].scriptPubKey, nStakeReward);
 
-    // scan for CLAMspeech registering CLAMour petitions
+    // scan for CONspeech registering CLAMour petitions
     string strHash, strURL;
     
     BOOST_FOREACH(CTransaction& tx, vtx)
@@ -1877,7 +1877,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
             if (mi == mapClamour.end())
                 pindex->vClamour.push_back(*(mapClamour[pid] = new CClamour(pindex->nHeight, tx.GetHash(), strHash, strURL)));
             else
-                LogPrintf("duplicate clamour with pid %s: %s\n", pid, tx.strCLAMSpeech.substr(0, MAX_TX_COMMENT_LEN));
+                LogPrintf("duplicate clamour with pid %s: %s\n", pid, tx.strCONspeech.substr(0, MAX_TX_COMMENT_LEN));
         }
 
     return true;
@@ -2503,7 +2503,7 @@ std::set<std::string> CBlockIndex::GetSupport() const
                 break;
             }
 
-            string& strSpeech = block.vtx[1].strCLAMSpeech;
+            string& strSpeech = block.vtx[1].strCONspeech;
             // LogPrintf("stake speech is '%s'\n", strSpeech);
 
             if (strSpeech.substr(0, 7) != "clamour")

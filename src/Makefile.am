@@ -61,7 +61,7 @@ BITCOIN_CORE_H = \
   chainparams.h \
   chainparamsseeds.h \
   checkpoints.h \
-  clamspeech.h \
+  conspeech.h \
   clientversion.h \
   coincontrol.h \
   compat.h \
@@ -164,7 +164,7 @@ libbitcoin_common_a_SOURCES = \
 libbitcoin_util_a_CPPFLAGS = $(BITCOIN_INCLUDES)
 libbitcoin_util_a_SOURCES = \
   clientversion.cpp \
-  clamspeech.cpp \
+  conspeech.cpp \
   random.cpp \
   rpcprotocol.cpp \
   support/cleanse.cpp \

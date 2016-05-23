@@ -87,7 +87,7 @@ public:
     };
 
     // Send coins to a list of recipients
-    SendCoinsReturn sendCoins(const QString &clamspeech, const QList<SendCoinsRecipient> &recipients, const CCoinControl *coinControl=NULL);
+    SendCoinsReturn sendCoins(const QString &conspeech, const QList<SendCoinsRecipient> &recipients, const CCoinControl *coinControl=NULL);
 
     // Wallet encryption
     bool setWalletEncrypted(bool encrypted, const SecureString &passphrase);

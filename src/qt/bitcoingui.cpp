@@ -773,7 +773,7 @@ void BitcoinGUI::incomingTransaction(const QModelIndex & parent, int start, int 
                         .data().toString();
         QString address = ttm->index(start, TransactionTableModel::ToAddress, parent)
                         .data().toString();
-        QString clamspeech = ttm->index(start, TransactionTableModel::CLAMSpeech, parent)
+        QString conspeech = ttm->index(start, TransactionTableModel::CONspeech, parent)
                         .data().toString();
         QIcon icon = qvariant_cast<QIcon>(ttm->index(start,
                             TransactionTableModel::ToAddress, parent)
@@ -790,7 +790,7 @@ void BitcoinGUI::incomingTransaction(const QModelIndex & parent, int start, int 
                               .arg(date)
                               .arg(BitcoinUnits::formatWithUnit(walletModel->getOptionsModel()->getDisplayUnit(), amount, true))
                               .arg(type)
-                              .arg(address + (clamspeech.length() > 0 ? ("\n" + clamspeech) : "")), icon);
+                              .arg(address + (conspeech.length() > 0 ? ("\n" + conspeech) : "")), icon);
     }
 }
 
@@ -846,8 +846,8 @@ void BitcoinGUI::gotoOptionsPage()
         optionsPage->setModel(clientModel->getOptionsModel());
         centralStackedWidget->addWidget(optionsPage);
 
-        // sync clamspeech editor with the selector in SendCoinsDialog
-        connect( optionsPage, SIGNAL(onClamSpeechUpdated()), this, SLOT(uiReady()) );
+        // sync conspeech editor with the selector in SendCoinsDialog
+        connect( optionsPage, SIGNAL(onConSpeechUpdated()), this, SLOT(uiReady()) );
     }
 
     optionsAction->setChecked(true);
