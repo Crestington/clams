@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Clam"
-            VALUE "FileDescription",    "Clamd (OSS daemon/client for Bitcoin)"
+            VALUE "CompanyName",        "PayCon"
+            VALUE "FileDescription",    "PayCond (OSS daemon/client for Bitcoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "clamd"
+            VALUE "InternalName",       "paycond"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "clamd.exe"
-            VALUE "ProductName",        "Clamd"
+            VALUE "OriginalFilename",   "paycond.exe"
+            VALUE "ProductName",        "PayCond"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

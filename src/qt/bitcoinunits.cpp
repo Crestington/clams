@@ -34,9 +34,9 @@ QString BitcoinUnits::name(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("CLAM");
-    case mBTC: return QString("mCLAM");
-    case uBTC: return QString::fromUtf8("μCLAM");
+    case BTC: return QString("CON");
+    case mBTC: return QString("mCON");
+    case uBTC: return QString::fromUtf8("μCON");
     default: return QString("???");
     }
 }
@@ -45,9 +45,9 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("Clams");
-    case mBTC: return QString("Milli-Clams (1 / 1,000)");
-    case uBTC: return QString("Micro-Clams (1 / 1,000,000)");
+    case BTC: return QString("CON");
+    case mBTC: return QString("Milli-CON (1 / 1,000)");
+    case uBTC: return QString("Micro-CON (1 / 1,000,000)");
     default: return QString("???");
     }
 }

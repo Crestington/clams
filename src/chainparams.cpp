@@ -102,7 +102,7 @@ public:
         assert(hashGenesisBlock == uint256("0x"));
         assert(genesis.hashMerkleRoot == uint256("0x"));
 
-        // push peer seeders running this network crawler: https://github.com/dooglus/bitcoin-seeder/tree/clam
+        // push peer seeders running this network crawler: https://github.com/dooglus/bitcoin-seeder/tree/paycon
         PUSH_SEED("")
         PUSH_SEED("")
 
@@ -110,11 +110,11 @@ public:
         //    public: 0xa8c26d64 ("cpubk...")
         //   private: 0xa8c17826 ("cprvk...")
         //
-        // http://doc.satoshilabs.com/slips/slip-0044.html gives the CLAM coin type version as 23 (0x80000017)
+        // http://doc.satoshilabs.com/slips/slip-0044.html gives the CON coin type version as 23 (0x80000017)
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(55);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(8);
-        //CLAM Secret key, from old base58.h (release 1.4.2.1)  == 5 + 128
+        //CON Secret key, from old base58.h (release 1.4.2.1)  == 5 + 128
         base58Prefixes[SECRET_KEY]     = list_of(133);
         base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E);
         base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4);

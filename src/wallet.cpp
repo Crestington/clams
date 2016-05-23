@@ -424,7 +424,7 @@ void CWallet::WalletUpdateSpent(const CTransaction &tx, bool fBlock)
                     LogPrintf("WalletUpdateSpent: bad wtx %s\n", wtx.GetHash().ToString());
                 else if (!wtx.IsSpent(txin.prevout.n) && IsMine(wtx.vout[txin.prevout.n]))
                 {
-                    LogPrintf("WalletUpdateSpent found spent coin %s CLAM %s\n", FormatMoney(GetCredit(wtx.vout[txin.prevout.n])), wtx.GetHash().ToString());
+                    LogPrintf("WalletUpdateSpent found spent coin %s CON %s\n", FormatMoney(GetCredit(wtx.vout[txin.prevout.n])), wtx.GetHash().ToString());
                     wtx.MarkSpent(txin.prevout.n);
                     wtx.WriteToDisk();
                     NotifyTransactionChanged(this, txin.prevout.hash, CT_UPDATED);
@@ -1017,7 +1017,7 @@ void CWallet::ReacceptWalletTransactions()
                 }
                 if (fUpdated)
                 {
-                    LogPrintf("ReacceptWalletTransactions found spent coin %s CLAM %s\n", FormatMoney(wtx.GetCredit()), wtx.GetHash().ToString());
+                    LogPrintf("ReacceptWalletTransactions found spent coin %s CON %s\n", FormatMoney(wtx.GetCredit()), wtx.GetHash().ToString());
                     wtx.MarkDirty();
                     wtx.WriteToDisk();
                 }
@@ -2113,7 +2113,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         {
             LOCK2(cs_main, cs_wallet);
             if (!txdb.ReadTxIndex(pcoin.first->hash, txindex)) {
-                LogPrint("stake", "[STAKE] skip %s:%-3d (%s CLAM) - can't read txindex\n",
+                LogPrint("stake", "[STAKE] skip %s:%-3d (%s CON) - can't read txindex\n",
                           pcoin.first->hash.ToString(), pcoin.second, FormatMoney(pcoin.first->vout[pcoin.second].nValue));
                 continue;
             }
@@ -2124,7 +2124,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         {
             LOCK2(cs_main, cs_wallet);
             if (!block.ReadFromDisk(txindex.pos.nFile, txindex.pos.nBlockPos, false)) {
-                LogPrint("stake", "[STAKE] skip %s:%-3d (%s CLAM) - can't read block\n",
+                LogPrint("stake", "[STAKE] skip %s:%-3d (%s CON) - can't read block\n",
                           pcoin.first->hash.ToString(), pcoin.second, FormatMoney(pcoin.first->vout[pcoin.second].nValue));
                 continue;
             }
@@ -2133,7 +2133,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         static int nMaxStakeSearchInterval = 60;
         nBlockTime = block.GetBlockTime();
         if (nBlockTime + nStakeMinAge > txNew.nTime - nMaxStakeSearchInterval) {
-            LogPrint("stake", "[STAKE] skip %s:%-3d (%s CLAM) - only %d minutes old\n",
+            LogPrint("stake", "[STAKE] skip %s:%-3d (%s CON) - only %d minutes old\n",
                       pcoin.first->hash.ToString(), pcoin.second, FormatMoney(pcoin.first->vout[pcoin.second].nValue),
                       (txNew.nTime - nMaxStakeSearchInterval - nBlockTime) / 60);
             continue; // only count coins meeting min age requirement
@@ -2147,7 +2147,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
             // Search nSearchInterval seconds back up to nMaxStakeSearchInterval
             uint256 targetProofOfStake = 0;
             COutPoint prevoutStake = COutPoint(pcoin.first->hash, pcoin.second);
-            LogPrint("stake", "[STAKE] check %s:%-3d (%s CLAM)\n",
+            LogPrint("stake", "[STAKE] check %s:%-3d (%s CON)\n",
                       pcoin.first->hash.ToString(), pcoin.second, FormatMoney(pcoin.first->vout[pcoin.second].nValue));
             if (CheckStakeKernelHash(pindexPrev, nBits, block, txindex.pos.nTxPos - txindex.pos.nBlockPos, *pcoin.first, prevoutStake, txNew.nTime - n, hashProofOfStake, targetProofOfStake))
             {
@@ -2159,14 +2159,14 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
                 scriptPubKeyKernel = pcoin.first->vout[pcoin.second].scriptPubKey;
                 if (!Solver(scriptPubKeyKernel, whichType, vSolutions))
                 {
-                    LogPrint("stake", "[STAKE] fail %s:%-3d (%s CLAM) - can't parse kernel\n",
+                    LogPrint("stake", "[STAKE] fail %s:%-3d (%s CON) - can't parse kernel\n",
                               pcoin.first->hash.ToString(), pcoin.second, FormatMoney(pcoin.first->vout[pcoin.second].nValue));
                     break;
                 }
                 LogPrint("coinstake", "CreateCoinStake : parsed kernel type=%d\n", whichType);
                 if (whichType != TX_PUBKEY && whichType != TX_PUBKEYHASH)
                 {
-                    LogPrint("stake", "[STAKE] fail %s:%-3d (%s CLAM) - bad kernel type\n",
+                    LogPrint("stake", "[STAKE] fail %s:%-3d (%s CON) - bad kernel type\n",
                               pcoin.first->hash.ToString(), pcoin.second, FormatMoney(pcoin.first->vout[pcoin.second].nValue));
                     break;  // only support pay to public key and pay to address
                 }
@@ -2176,7 +2176,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
                     stakingkeyID = uint160(vSolutions[0]);
                     if (!keystore.GetKey(stakingkeyID, key))
                     {
-                        LogPrint("stake", "[STAKE] fail %s:%-3d (%s CLAM) - can't get public key (a)\n",
+                        LogPrint("stake", "[STAKE] fail %s:%-3d (%s CON) - can't get public key (a)\n",
                                   pcoin.first->hash.ToString(), pcoin.second, FormatMoney(pcoin.first->vout[pcoin.second].nValue));
                         break;  // unable to find corresponding public key
                     }
@@ -2188,7 +2188,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
                     stakingkeyID = Hash160(vchPubKey);
                     if (!keystore.GetKey(stakingkeyID, key))
                     {
-                        LogPrint("stake", "[STAKE] fail %s:%-3d (%s CLAM) - can't get public key, type %d\n",
+                        LogPrint("stake", "[STAKE] fail %s:%-3d (%s CON) - can't get public key, type %d\n",
                                   pcoin.first->hash.ToString(), pcoin.second, FormatMoney(pcoin.first->vout[pcoin.second].nValue),
                                   whichType);
                         LogPrint("coinstake", "CreateCoinStake : failed to get key for kernel type=%d\n", whichType);
@@ -2197,7 +2197,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
 
                     if (key.GetPubKey() != vchPubKey)
                     {
-                        LogPrint("stake", "[STAKE] fail %s:%-3d (%s CLAM) - invalid key, type %d\n",
+                        LogPrint("stake", "[STAKE] fail %s:%-3d (%s CON) - invalid key, type %d\n",
                                   pcoin.first->hash.ToString(), pcoin.second, FormatMoney(pcoin.first->vout[pcoin.second].nValue),
                                   whichType);
                         break; // keys mismatch
@@ -2242,7 +2242,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
     }
 
     // set conSpeech when staking a block
-    if (!(mapArgs["-clamstake"] == "off")) {
+    if (!(mapArgs["-constake"] == "off")) {
         if (weightedStakeSpeech.size()) {
             txNew.strCONspeech = weightedStakeSpeech.select(hashProofOfStake.Get64());
         } else if(GetDefaultConcordConSpeech() == "") {
@@ -3005,7 +3005,7 @@ void CWallet::FixSpentCoins(int& nMismatchFound, int64_t& nBalanceInQuestion, bo
         {
             if (IsMine(pcoin->vout[n]) && pcoin->IsSpent(n) && (txindex.vSpent.size() <= n || txindex.vSpent[n].IsNull()))
             {
-                LogPrintf("FixSpentCoins found lost coin %s CLAM %s[%d], %s\n",
+                LogPrintf("FixSpentCoins found lost coin %s CON %s[%d], %s\n",
                     FormatMoney(pcoin->vout[n].nValue).c_str(), pcoin->GetHash().ToString(), n, fCheckOnly? "repair not attempted" : "repairing");
                 nMismatchFound++;
                 nBalanceInQuestion += pcoin->vout[n].nValue;
@@ -3017,7 +3017,7 @@ void CWallet::FixSpentCoins(int& nMismatchFound, int64_t& nBalanceInQuestion, bo
             }
             else if (IsMine(pcoin->vout[n]) && !pcoin->IsSpent(n) && (txindex.vSpent.size() > n && !txindex.vSpent[n].IsNull()))
             {
-                LogPrintf("FixSpentCoins found spent coin %s CLAM %s[%d], %s\n",
+                LogPrintf("FixSpentCoins found spent coin %s CON %s[%d], %s\n",
                     FormatMoney(pcoin->vout[n].nValue).c_str(), pcoin->GetHash().ToString(), n, fCheckOnly? "repair not attempted" : "repairing");
                 nMismatchFound++;
                 nBalanceInQuestion += pcoin->vout[n].nValue;

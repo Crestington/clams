@@ -123,8 +123,8 @@ UniValue validateaddress(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "validateaddress <clamaddress>\n"
-            "Return information about <clamaddress>.");
+            "validateaddress <payconaddress>\n"
+            "Return information about <payconaddress>.");
 
     CBitcoinAddress address(params[0].get_str());
     bool isValid = address.IsValid();
@@ -317,8 +317,8 @@ UniValue validatepubkey(const UniValue& params, bool fHelp)
 {
     if (fHelp || !params.size() || params.size() > 2)
         throw runtime_error(
-            "validatepubkey <clampubkey>\n"
-            "Return information about <clampubkey>.");
+            "validatepubkey <payconpubkey>\n"
+            "Return information about <payconpubkey>.");
 
     std::vector<unsigned char> vchPubKey = ParseHex(params[0].get_str());
     CPubKey pubKey(vchPubKey);
@@ -356,7 +356,7 @@ UniValue verifymessage(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 3)
         throw runtime_error(
-            "verifymessage <clamaddress> <signature> <message>\n"
+            "verifymessage <payconaddress> <signature> <message>\n"
             "Verify a signed message");
 
     string strAddress  = params[0].get_str();

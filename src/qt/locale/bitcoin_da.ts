@@ -3,22 +3,22 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Clam</source>
-        <translation>Om Clam</translation>
+        <source>About PayCon</source>
+        <translation>Om PayCon</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Clam&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Clam&lt;/b&gt; version</translation>
+        <source>&lt;b&gt;PayCon&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;PayCon&lt;/b&gt; version</translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The Clam developers</source>
+Copyright © 2014 The PayCon developers</source>
         <translation>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The Clam developers</translation>
+Copyright © 2014 The PayCon developers</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -65,8 +65,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="-46"/>
-        <source>These are your Clam addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Dette er dine Clam adresser til at modtage betalinger. Du ønsker måske at give en anden en til af hver afsender, så du kan holde styr på hvem der betaler dig.</translation>
+        <source>These are your PayCon addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Dette er dine PayCon adresser til at modtage betalinger. Du ønsker måske at give en anden en til af hver afsender, så du kan holde styr på hvem der betaler dig.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -80,8 +80,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a Clam address</source>
-        <translation>Signerer en meddelelse for at bevise du ejer en Clam adresse</translation>
+        <source>Sign a message to prove you own a PayCon address</source>
+        <translation>Signerer en meddelelse for at bevise du ejer en PayCon adresse</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -95,8 +95,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified Clam address</source>
-        <translation>Bekræft en meddelelse for at sikre, den blev underskrevet med en specificeret Clam adresse</translation>
+        <source>Verify a message to ensure it was signed with a specified PayCon address</source>
+        <translation>Bekræft en meddelelse for at sikre, den blev underskrevet med en specificeret PayCon adresse</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -263,8 +263,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="-58"/>
-        <source>Clam will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>Clam lukker nu for at afslutte krypteringen. Husk at en krypteret  tegnebog ikke fuldt ud beskytter dine mønter mod at blive stjålet af malware som har inficeret din computer.</translation>
+        <source>PayCon will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>PayCon lukker nu for at afslutte krypteringen. Husk at en krypteret  tegnebog ikke fuldt ud beskytter dine mønter mod at blive stjålet af malware som har inficeret din computer.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -377,8 +377,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="+6"/>
-        <source>Show information about Clam</source>
-        <translation>Vis oplysninger om Clam</translation>
+        <source>Show information about PayCon</source>
+        <translation>Vis oplysninger om PayCon</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -427,13 +427,13 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="-64"/>
-        <source>Send coins to a Clam address</source>
-        <translation>Send mønter til en Clam adresse</translation>
+        <source>Send coins to a PayCon address</source>
+        <translation>Send mønter til en PayCon adresse</translation>
     </message>
     <message>
         <location line="+47"/>
-        <source>Modify configuration options for Clam</source>
-        <translation>Ændre indstillingsmuligheder for Clam</translation>
+        <source>Modify configuration options for PayCon</source>
+        <translation>Ændre indstillingsmuligheder for PayCon</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -472,8 +472,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="-202"/>
-        <source>Clam</source>
-        <translation>Clam</translation>
+        <source>PayCon</source>
+        <translation>PayCon</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -482,8 +482,8 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="+180"/>
-        <source>&amp;About Clam</source>
-        <translation>&amp;Om Clam</translation>
+        <source>&amp;About PayCon</source>
+        <translation>&amp;Om PayCon</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -539,13 +539,13 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     <message>
         <location line="+0"/>
         <location line="+60"/>
-        <source>Clam client</source>
-        <translation>Clam Klient</translation>
+        <source>PayCon client</source>
+        <translation>PayCon Klient</translation>
     </message>
     <message numerus="yes">
         <location line="+75"/>
-        <source>%n active connection(s) to Clam network</source>
-        <translation><numerusform>%n aktiv forbindelse til Clam netværk</numerusform><numerusform>%n aktive forbindelser til Clam netværk</numerusform></translation>
+        <source>%n active connection(s) to PayCon network</source>
+        <translation><numerusform>%n aktiv forbindelse til PayCon netværk</numerusform><numerusform>%n aktive forbindelser til PayCon netværk</numerusform></translation>
     </message>
     <message>
         <location line="+40"/>
@@ -584,13 +584,13 @@ Produktet indeholder software, som er udviklet af OpenSSL Project til brug i Ope
     </message>
     <message>
         <location line="-312"/>
-        <source>About Clam card</source>
-        <translation>Om Clam kort</translation>
+        <source>About PayCon card</source>
+        <translation>Om PayCon kort</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Show information about Clam card</source>
-        <translation>Vis oplysninger om Clam kort</translation>
+        <source>Show information about PayCon card</source>
+        <translation>Vis oplysninger om PayCon kort</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -669,8 +669,8 @@ Adresse: %4
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid Clam address or malformed URI parameters.</source>
-        <translation>URI kan ikke tolkes! Dette kan skyldes en ugyldig Clam adresse eller misdannede URI parametre.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid PayCon address or malformed URI parameters.</source>
+        <translation>URI kan ikke tolkes! Dette kan skyldes en ugyldig PayCon adresse eller misdannede URI parametre.</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -729,7 +729,7 @@ Adresse: %4
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. Clam can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. PayCon can no longer continue safely and will quit.</source>
         <translation>Der opstod en fejl under forsøg på at gemme dataene i tegnebogen til den nye placering.</translation>
     </message>
 </context>
@@ -1063,8 +1063,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Clam address.</source>
-        <translation>Den indtastede adresse &quot;%1&quot; er ikke en gyldig Clam adresse.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid PayCon address.</source>
+        <translation>Den indtastede adresse &quot;%1&quot; er ikke en gyldig PayCon adresse.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1082,8 +1082,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location filename="../guiutil.cpp" line="+420"/>
         <location line="+12"/>
-        <source>Clam-Qt</source>
-        <translation>Clam-Qt</translation>
+        <source>PayCon-Qt</source>
+        <translation>PayCon-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1155,13 +1155,13 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start Clam after logging in to the system.</source>
-        <translation>Automatisk start Clam efter at have logget ind på systemet.</translation>
+        <source>Automatically start PayCon after logging in to the system.</source>
+        <translation>Automatisk start PayCon efter at have logget ind på systemet.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Clam on system login</source>
-        <translation>&amp;Start Clam ved systems login</translation>
+        <source>&amp;Start PayCon on system login</source>
+        <translation>&amp;Start PayCon ved systems login</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1180,8 +1180,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the Clam client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatisk åbne Clam klient-port på routeren. Dette virker kun, når din router understøtter UPnP og er det er aktiveret.</translation>
+        <source>Automatically open the PayCon client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatisk åbne PayCon klient-port på routeren. Dette virker kun, når din router understøtter UPnP og er det er aktiveret.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1190,8 +1190,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the Clam network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Opret forbindelse til Clam netværk via en SOCKS proxy (fx ved tilslutning gennem Tor).</translation>
+        <source>Connect to the PayCon network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Opret forbindelse til PayCon netværk via en SOCKS proxy (fx ved tilslutning gennem Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1265,8 +1265,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Clam.</source>
-        <translation>Sproget i brugergrænsefladen kan indstilles her. Denne indstilling vil træde i kraft efter genstart af Clam tegnebog.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting PayCon.</source>
+        <translation>Sproget i brugergrænsefladen kan indstilles her. Denne indstilling vil træde i kraft efter genstart af PayCon tegnebog.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1280,8 +1280,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show Clam addresses in the transaction list or not.</source>
-        <translation>Få vist Clam adresser på listen over transaktioner eller ej.</translation>
+        <source>Whether to show PayCon addresses in the transaction list or not.</source>
+        <translation>Få vist PayCon adresser på listen over transaktioner eller ej.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1327,8 +1327,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting Clam.</source>
-        <translation>Denne indstilling vil træde i kraft efter genstart af Clam.</translation>
+        <source>This setting will take effect after restarting PayCon.</source>
+        <translation>Denne indstilling vil træde i kraft efter genstart af PayCon.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1346,8 +1346,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location line="+33"/>
         <location line="+231"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Clam network after a connection is established, but this process has not completed yet.</source>
-        <translation>De viste oplysninger kan være forældet. Din tegnebog synkroniserer automatisk med Clam netværket efter en forbindelse er etableret, men denne proces er ikke afsluttet endnu.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PayCon network after a connection is established, but this process has not completed yet.</source>
+        <translation>De viste oplysninger kan være forældet. Din tegnebog synkroniserer automatisk med PayCon netværket efter en forbindelse er etableret, men denne proces er ikke afsluttet endnu.</translation>
     </message>
     <message>
         <location line="-160"/>
@@ -1562,8 +1562,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the Clam-Qt help message to get a list with possible Clam command-line options.</source>
-        <translation>Vis Clam-Qt hjælpe besked for at få en liste med mulige Clam kommandolinjeparametre.</translation>
+        <source>Show the PayCon-Qt help message to get a list with possible PayCon command-line options.</source>
+        <translation>Vis PayCon-Qt hjælpe besked for at få en liste med mulige PayCon kommandolinjeparametre.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1582,13 +1582,13 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="-104"/>
-        <source>Clam - Debug window</source>
-        <translation>Clam - Debug vindue</translation>
+        <source>PayCon - Debug window</source>
+        <translation>PayCon - Debug vindue</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>Clam Core</source>
-        <translation>Clam Kerne</translation>
+        <source>PayCon Core</source>
+        <translation>PayCon Kerne</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1597,8 +1597,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Clam debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Åbn Clam debug logfilen fra den nuværende data mappe. Dette kan tage et par sekunder for store logfiler.</translation>
+        <source>Open the PayCon debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Åbn PayCon debug logfilen fra den nuværende data mappe. Dette kan tage et par sekunder for store logfiler.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1607,8 +1607,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the Clam RPC console.</source>
-        <translation>Velkommen til Clam RPC-konsol.</translation>
+        <source>Welcome to the PayCon RPC console.</source>
+        <translation>Velkommen til PayCon RPC-konsol.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1681,8 +1681,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
         <location line="+86"/>
         <location line="+86"/>
         <location line="+32"/>
-        <source>0.00 CLAM</source>
-        <translation>123.456 CLAM {0.00 ?}</translation>
+        <source>0.00 CON</source>
+        <translation>123.456 CON {0.00 ?}</translation>
     </message>
     <message>
         <location line="-191"/>
@@ -1751,8 +1751,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>123.456 CLAM</source>
-        <translation>123.456 CLAM</translation>
+        <source>123.456 CON</source>
+        <translation>123.456 CON</translation>
     </message>
     <message>
         <location line="+31"/>
@@ -1766,8 +1766,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a Clam address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Indtast en Clam-adresse (f.eks B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a PayCon address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Indtast en PayCon-adresse (f.eks B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1866,8 +1866,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+251"/>
-        <source>WARNING: Invalid Clam address</source>
-        <translation>ADVARSEL: Ugyldig Clam adresse</translation>
+        <source>WARNING: Invalid PayCon address</source>
+        <translation>ADVARSEL: Ugyldig PayCon adresse</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1940,8 +1940,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Clam address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Indtast en Clam-adresse (f.eks B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a PayCon address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Indtast en PayCon-adresse (f.eks B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -2001,8 +2001,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Clam address</source>
-        <translation>Underskriv brevet for at bevise du ejer denne Clam adresse</translation>
+        <source>Sign the message to prove you own this PayCon address</source>
+        <translation>Underskriv brevet for at bevise du ejer denne PayCon adresse</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2033,8 +2033,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified Clam address</source>
-        <translation>Kontroller meddelelsen for at sikre, at den blev indgået med den angivne Clam adresse</translation>
+        <source>Verify the message to ensure it was signed with the specified PayCon address</source>
+        <translation>Kontroller meddelelsen for at sikre, at den blev indgået med den angivne PayCon adresse</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2044,8 +2044,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Clam address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Indtast en Clam-adresse (f.eks B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a PayCon address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Indtast en PayCon-adresse (f.eks B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2054,8 +2054,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter Clam signature</source>
-        <translation>Indtast Clam underskrift</translation>
+        <source>Enter PayCon signature</source>
+        <translation>Indtast PayCon underskrift</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2625,8 +2625,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+33"/>
-        <source>Clam version</source>
-        <translation>Clam version</translation>
+        <source>PayCon version</source>
+        <translation>PayCon version</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2635,8 +2635,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or clamd</source>
-        <translation>Send kommando til-server eller clamd</translation>
+        <source>Send command to -server or paycond</source>
+        <translation>Send kommando til-server eller paycond</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2655,13 +2655,13 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: clam.conf)</source>
-        <translation>Angiv konfigurationsfil (default: clam.conf)</translation>
+        <source>Specify configuration file (default: paycon.conf)</source>
+        <translation>Angiv konfigurationsfil (default: paycon.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: clamd.pid)</source>
-        <translation>Angiv pid fil (standard: clamd.pid)</translation>
+        <source>Specify pid file (default: paycond.pid)</source>
+        <translation>Angiv pid fil (standard: paycond.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2810,8 +2810,8 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
     </message>
     <message>
         <location line="+61"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Clam will not work properly.</source>
-        <translation>Advarsel: Kontroller venligst, at computerens dato og klokkeslæt er korrekt! Hvis dit ur er forkert vil Clam ikke fungere korrekt.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong PayCon will not work properly.</source>
+        <translation>Advarsel: Kontroller venligst, at computerens dato og klokkeslæt er korrekt! Hvis dit ur er forkert vil PayCon ikke fungere korrekt.</translation>
     </message>
     <message>
         <location line="-31"/>
@@ -3000,24 +3000,24 @@ Det betyder, at et gebyr på mindst %2 er påkrævet.</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=clamrpc
+rpcuser=payconrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Clam Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;PayCon Alert&quot; admin@foo.com
 </source>
         <translation>% s, skal du indstille et rpcpassword i konfigurationsfilen: 
 % s 
 Det anbefales at bruge følgende tilfældig adgangskode: 
-rpcuser = clamrpc  
+rpcuser = payconrpc  
 rpcpassword =% s  
 (du behøver ikke at huske denne adgangskode)  
 Brugernavn og adgangskode må ikke være den samme.  
 Hvis filen ikke findes, skal du oprette den med filtilladelser ejer-læsbar-kun. 
 Det kan også anbefales at sætte alertnotify så du får besked om problemer; 
-for eksempel: alertnotify = echo%% s | mail-s &quot;Clam Alert&quot; admin@foo.com 
+for eksempel: alertnotify = echo%% s | mail-s &quot;PayCon Alert&quot; admin@foo.com 
 </translation>
     </message>
     <message>
@@ -3142,13 +3142,13 @@ for eksempel: alertnotify = echo%% s | mail-s &quot;Clam Alert&quot; admin@foo.c
     </message>
     <message>
         <location line="+1"/>
-        <source>Cannot obtain a lock on data directory %s.  Clam is probably already running.</source>
-        <translation>Kan ikke få en lås på data mappe% s. Clam kører sikkert allerede.</translation>
+        <source>Cannot obtain a lock on data directory %s.  PayCon is probably already running.</source>
+        <translation>Kan ikke få en lås på data mappe% s. PayCon kører sikkert allerede.</translation>
     </message>
     <message>
         <location line="-98"/>
-        <source>Clam</source>
-        <translation>Clam</translation>
+        <source>PayCon</source>
+        <translation>PayCon</translation>
     </message>
     <message>
         <location line="+140"/>
@@ -3182,13 +3182,13 @@ for eksempel: alertnotify = echo%% s | mail-s &quot;Clam Alert&quot; admin@foo.c
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Clam</source>
-        <translation>Fejl ved indlæsning af wallet.dat: Wallet kræver en nyere version af Clam</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of PayCon</source>
+        <translation>Fejl ved indlæsning af wallet.dat: Wallet kræver en nyere version af PayCon</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Clam to complete</source>
-        <translation>Det er nødvendig for wallet at blive omskrevet: Genstart Clam for fuldføre</translation>
+        <source>Wallet needed to be rewritten: restart PayCon to complete</source>
+        <translation>Det er nødvendig for wallet at blive omskrevet: Genstart PayCon for fuldføre</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3257,8 +3257,8 @@ for eksempel: alertnotify = echo%% s | mail-s &quot;Clam Alert&quot; admin@foo.c
     </message>
     <message>
         <location line="+122"/>
-        <source>Unable to bind to %s on this computer. Clam is probably already running.</source>
-        <translation>Kunne ikke binde sig til% s på denne computer. Clam kører sikkert allerede.</translation>
+        <source>Unable to bind to %s on this computer. PayCon is probably already running.</source>
+        <translation>Kunne ikke binde sig til% s på denne computer. PayCon kører sikkert allerede.</translation>
     </message>
     <message>
         <location line="-97"/>

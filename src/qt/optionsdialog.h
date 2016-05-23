@@ -21,8 +21,8 @@ public:
 
     void setModel(OptionsModel *model);
     void setMapper();
-    void loadClamQuotes();
-    void saveClamQuotes();
+    void loadConQuotes();
+    void saveConQuotes();
 
 signals:
     void proxyIpValid(QValidatedLineEdit *object, bool fValid);

@@ -126,7 +126,7 @@ void SendCoinsDialog::on_sendButton_clicked()
     if(!model)
         return;
 
-    QString conspeech = ui->clamQuotes->currentText();
+    QString conspeech = ui->conQuotes->currentText();
 
     for(int i = 0; i < ui->entries->count(); ++i)
     {
@@ -240,10 +240,10 @@ void SendCoinsDialog::conSpeechIndexChanged(const int &index)
         qDebug() << "New CONspeech quote added at" << index;
 
         // Add quote
-        quoteList.push_back( ui->clamQuotes->itemText(index).toStdString() );
+        quoteList.push_back( ui->conQuotes->itemText(index).toStdString() );
     }
 
-    conSpeechQuoteCount = ui->clamQuotes->count();
+    conSpeechQuoteCount = ui->conQuotes->count();
     nConSpeechIndex = index;
 
     qDebug() << "saving nConSpeechIndex =" << index;
@@ -254,7 +254,7 @@ void SendCoinsDialog::conSpeechIndexChanged(const int &index)
 
 void SendCoinsDialog::clear()
 {
-    ui->clamQuotes->clear();
+    ui->conQuotes->clear();
     // Remove 
     //entries until only one left
     while(ui->entries->count())
@@ -323,8 +323,8 @@ void SendCoinsDialog::removeEntry(SendCoinsEntry* entry)
 
 QWidget *SendCoinsDialog::setupTabChain(QWidget *prev)
 {
-    QWidget::setTabOrder(prev, ui->clamQuotes);
-    prev = ui->clamQuotes;
+    QWidget::setTabOrder(prev, ui->conQuotes);
+    prev = ui->conQuotes;
 
     for(int i = 0; i < ui->entries->count(); ++i)
     {
@@ -396,15 +396,15 @@ void SendCoinsDialog::loadConSpeech()
         return;
 
     // disconnect widget change signal to stop clashing
-    disconnect( ui->clamQuotes, SIGNAL(currentIndexChanged(int)), this, SLOT(conSpeechIndexChanged(int)) );
+    disconnect( ui->conQuotes, SIGNAL(currentIndexChanged(int)), this, SLOT(conSpeechIndexChanged(int)) );
 
     // Load quotes from conspeech.h
-    ui->clamQuotes->clear();
+    ui->conQuotes->clear();
     for ( ulong i = 0; i < conSpeech.size(); i++ )
-        ui->clamQuotes->addItem( QString::fromStdString( conSpeech.at(i) ) );
+        ui->conQuotes->addItem( QString::fromStdString( conSpeech.at(i) ) );
 
     // Hold the index count to detect appending new quotes
-    conSpeechQuoteCount = ui->clamQuotes->count();
+    conSpeechQuoteCount = ui->conQuotes->count();
 
     if ( !conSpeechQuoteCount )
         return;
@@ -415,7 +415,7 @@ void SendCoinsDialog::loadConSpeech()
         qDebug() << "Random quote selected";
 
         qsrand( (QDateTime().toTime_t() * 1000) );
-        ui->clamQuotes->setCurrentIndex( qrand() % ui->clamQuotes->count() );
+        ui->conQuotes->setCurrentIndex( qrand() % ui->conQuotes->count() );
     }
     else // Fixed chosen quote
     {
@@ -423,17 +423,17 @@ void SendCoinsDialog::loadConSpeech()
         if ( nConSpeechIndex >= conSpeechQuoteCount )
             nConSpeechIndex = conSpeechQuoteCount -1;
 
-        ui->clamQuotes->setCurrentIndex( nConSpeechIndex );
+        ui->conQuotes->setCurrentIndex( nConSpeechIndex );
     }
 
     // Print debug info
     qDebug() << conSpeechQuoteCount << "CONspeech quotes parsed.";
     qDebug() << "fConSpeechRandom =" << fUseConSpeechRandom;
     qDebug() << "nConSpeechIndex =" << nConSpeechIndex;
-    qDebug() << "CONspeech selected index" << ui->clamQuotes->currentIndex();
+    qDebug() << "CONspeech selected index" << ui->conQuotes->currentIndex();
 
     // setup conspeech widget change signal
-    connect( ui->clamQuotes, SIGNAL(currentIndexChanged(int)), this, SLOT(conSpeechIndexChanged(int)) );
+    connect( ui->conQuotes, SIGNAL(currentIndexChanged(int)), this, SLOT(conSpeechIndexChanged(int)) );
 }
 
 void SendCoinsDialog::uiReady()
@@ -542,7 +542,7 @@ void SendCoinsDialog::coinControlChangeEdited(const QString & text)
         else if (!CBitcoinAddress(text.toStdString()).IsValid())
         {
             ui->labelCoinControlChangeLabel->setStyleSheet("QLabel{color:red;}");
-            ui->labelCoinControlChangeLabel->setText(tr("WARNING: Invalid Clam address"));
+            ui->labelCoinControlChangeLabel->setText(tr("WARNING: Invalid PayCon address"));
         }
         else
         {

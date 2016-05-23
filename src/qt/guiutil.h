@@ -6,7 +6,7 @@
 #include <QMessageBox>
 
 // UI extern settings defined in optionsmodel.cpp
-extern bool fUseClamTheme;
+extern bool fUsePayConTheme;
 extern bool fUseConSpeech;
 extern bool fUseConSpeechRandom;
 extern int nConSpeechIndex;
@@ -44,7 +44,7 @@ namespace GUIUtil
     void setupAddressWidget(QLineEdit *widget, QWidget *parent);
     void setupAmountWidget(QLineEdit *widget, QWidget *parent);
 
-    // Parse "clam:" URI into recipient object, return true on successful parsing
+    // Parse "paycon:" URI into recipient object, return true on successful parsing
     // See Bitcoin URI definition discussion here: https://bitcointalk.org/index.php?topic=33490.0
     bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out);
     bool parseBitcoinURI(QString uri, SendCoinsRecipient *out);

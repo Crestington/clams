@@ -110,9 +110,9 @@ UniValue importprivkey(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() < 1 || params.size() > 3)
         throw runtime_error(
-            "importprivkey <clamprivkey> [label] [rescan=true]\n"
+            "importprivkey <payconprivkey> [label] [rescan=true]\n"
             "Adds a private key (as returned by dumpprivkey) to your wallet.\n"
-	    "Accepts CLAM, BTC, LTC and DOGE private keys\n");
+	    "Accepts CON, BTC, LTC and DOGE private keys\n");
 
     string strSecret = params[0].get_str();
     string strLabel = "";
@@ -165,9 +165,9 @@ UniValue deleteprivkey(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "deleteprivkey <clamaddress>\n"
+            "deleteprivkey <payconaddress>\n"
             "Irreversibly deletes the private key corresponding to the given address from your wallet.\n"
-	    "Accepts CLAM addresses\n");
+	    "Accepts CON addresses\n");
 
     EnsureWalletIsUnlocked();
 
@@ -288,15 +288,15 @@ UniValue dumpprivkey(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "dumpprivkey <clamaddress>\n"
-            "Reveals the private key corresponding to <clamaddress>.");
+            "dumpprivkey <payconaddress>\n"
+            "Reveals the private key corresponding to <payconaddress>.");
 
     EnsureWalletIsUnlocked();
 
     string strAddress = params[0].get_str();
     CBitcoinAddress address;
     if (!address.SetString(strAddress))
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Clam address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid PayCon address");
     if (fWalletUnlockStakingOnly)
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Wallet is unlocked for staking only.");
     CKeyID keyID;
@@ -339,7 +339,7 @@ UniValue dumpwallet(const UniValue& params, bool fHelp)
     std::sort(vKeyBirth.begin(), vKeyBirth.end());
 
     // produce output
-    file << strprintf("# Wallet dump created by Clam %s (%s)\n", CLIENT_BUILD, CLIENT_DATE);
+    file << strprintf("# Wallet dump created by PayCon %s (%s)\n", CLIENT_BUILD, CLIENT_DATE);
     file << strprintf("# * Created on %s\n", EncodeDumpTime(GetTime()));
     file << strprintf("# * Best block at time of backup was %i (%s),\n", nBestHeight, hashBestChain.ToString());
     file << strprintf("#   mined on %s\n", EncodeDumpTime(pindexBest->nTime));
@@ -371,7 +371,7 @@ UniValue importwallet(const UniValue& params, bool fHelp)
     if (fHelp || params.size() < 1 || params.size() > 3)
         throw runtime_error(
             "importwallet <file> [walletpassword] [rescan=true]\n"
-            "Import wallet.dat from BTC/LTC/DOGE/CLAM \n"
+            "Import wallet.dat from BTC/LTC/DOGE/CON \n"
             "Password is only required if wallet is encrypted\n"
         );
 
@@ -399,7 +399,7 @@ UniValue importwallet(const UniValue& params, bool fHelp)
     }
 
     // Handle encrypted wallets. Wallets first need to be unlocked before the keys
-    // can be added into your clam wallet. 
+    // can be added into your paycon wallet. 
     if (pwalletImport->IsCrypted() && pwalletImport->IsLocked()) {
         bool fGotWalletPass = true;
         if (params.size() < 2)
@@ -477,7 +477,7 @@ UniValue importwallet(const UniValue& params, bool fHelp)
     {
         if (fRescan)
         {
-            LogPrintf("Searching last %i blocks (from block %i) for dug Clams...\n", pindexBest->nHeight - pindexGenesisBlock->nHeight, pindexGenesisBlock->nHeight);
+            LogPrintf("Searching last %i blocks (from block %i) for dug CON...\n", pindexBest->nHeight - pindexGenesisBlock->nHeight, pindexGenesisBlock->nHeight);
             pwalletMain->ScanForWalletTransactions(pindexGenesisBlock, true, true);
             pwalletMain->ReacceptWalletTransactions();
             pwalletMain->MarkDirty();

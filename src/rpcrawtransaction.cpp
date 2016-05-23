@@ -54,7 +54,7 @@ void TxToJSON(const CTransaction& tx, const uint256 hashBlock, UniValue& entry)
     entry.push_back(Pair("locktime", (int64_t)tx.nLockTime));
     if (tx.nVersion > CTransaction::LEGACY_VERSION_1)
     {
-      entry.push_back(Pair("clam-speech", tx.strCONspeech));
+      entry.push_back(Pair("con-speech", tx.strCONspeech));
     }
 
     UniValue vin(UniValue::VARR);
@@ -178,7 +178,7 @@ UniValue listunspent(const UniValue& params, bool fHelp)
         {
             CBitcoinAddress address(inputs[idx].get_str());
             if (!address.IsValid())
-                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid Clam address: ")+inputs[idx].get_str());
+                throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid PayCon address: ")+inputs[idx].get_str());
            setAddress.insert(address);
         }
     }
@@ -248,7 +248,7 @@ UniValue createrawtransaction(const UniValue& params, bool fHelp)
             "(array of objects containing transaction id and output number),\n"
             "sending to given address(es).\n"
             "Each <amount> is either an amount to send or {\"count\":c,\"amount\":a,\"locktime\":t}\n"
-            "which adds <c> outputs each sending <a> CLAMs with a locktime of <t>.\n"
+            "which adds <c> outputs each sending <a> CON with a locktime of <t>.\n"
             "The count <c> and locktime <t> are both optional.\n"
             "Returns hex-encoded raw transaction.\n"
             "Note that the transaction's inputs are not signed, and\n"
@@ -303,7 +303,7 @@ UniValue createrawtransaction(const UniValue& params, bool fHelp)
 
         CBitcoinAddress address(name_);
         if (!address.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid Clam address: ")+name_);
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, string("Invalid PayCon address: ")+name_);
 
         // if (setAddress.count(address))
         //     throw JSONRPCError(RPC_INVALID_PARAMETER, string("Invalid parameter, duplicated address: ")+name_);
@@ -314,7 +314,7 @@ UniValue createrawtransaction(const UniValue& params, bool fHelp)
 
         // we usually want the 2nd parameter to be {"addr1":ammount1,"addr2":ammount2,...}
         // in addition to numerical amounts we now also accept values like:
-        //   '{"count":2,"amount":1.3,"locktime":333333}' meaning 'make 2 outputs worth 1.3 CLAM each, locked until block 333333'
+        //   '{"count":2,"amount":1.3,"locktime":333333}' meaning 'make 2 outputs worth 1.3 CON each, locked until block 333333'
         // "count" is a non-negative integer; 0 works and simply makes no new outputs
         // "locktime" is a non-negative integer; values less than LOCKTIME_THRESHOLD (500,000,000) are block heights; others are epoch timestamps
         if (value_.isObject()) {

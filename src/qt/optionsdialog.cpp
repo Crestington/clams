@@ -122,7 +122,7 @@ void OptionsDialog::setModel(OptionsModel *model)
         mapper->toFirst();
     }
 
-    loadClamQuotes();
+    loadConQuotes();
 
     /* update the display unit, to not use the default ("BTC") */
     updateDisplayUnit();
@@ -160,12 +160,12 @@ void OptionsDialog::setMapper()
     mapper->addMapping(ui->unit, OptionsModel::DisplayUnit);
     mapper->addMapping(ui->coinControlFeatures, OptionsModel::CoinControlFeatures);
     mapper->addMapping(ui->minimizeCoinAge, OptionsModel::MinimizeCoinAge);
-    mapper->addMapping(ui->useClamTheme, OptionsModel::UseClamTheme);
+    mapper->addMapping(ui->usePayConTheme, OptionsModel::UsePayConTheme);
     mapper->addMapping(ui->conSpeechGroupbox, OptionsModel::UseConSpeech);
     mapper->addMapping(ui->conSpeechRandomCheckbox, OptionsModel::UseConSpeechRandom);
 }
 
-void OptionsDialog::loadClamQuotes()
+void OptionsDialog::loadConQuotes()
 {
     if ( !fUseConSpeech )
         return;
@@ -175,7 +175,7 @@ void OptionsDialog::loadClamQuotes()
         ui->conSpeechEditbox->appendPlainText( QString::fromStdString( conSpeech.at(i) ) );
 }
 
-void OptionsDialog::saveClamQuotes()
+void OptionsDialog::saveConQuotes()
 {
     if ( !fUseConSpeech )
         return;
@@ -187,7 +187,7 @@ void OptionsDialog::saveClamQuotes()
         if ( !strLine.isEmpty() )
             conSpeech.push_back( strLine.trimmed().toStdString() );
 
-    // save clam quotes
+    // save con quotes
     qDebug() << "saving conspeech";
     if ( !SaveConSpeech() )
         qDebug() << "CONspeech FAILED to save!";
@@ -231,7 +231,7 @@ void OptionsDialog::on_cancelButton_clicked()
 void OptionsDialog::on_applyButton_clicked()
 {
     mapper->submit();
-    saveClamQuotes();
+    saveConQuotes();
     disableApplyButton();
 }
 
@@ -239,7 +239,7 @@ void OptionsDialog::showRestartWarning_Proxy()
 {
     if(!fRestartWarningDisplayed_Proxy)
     {
-        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting Clam."), QMessageBox::Ok);
+        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting PayCon."), QMessageBox::Ok);
         fRestartWarningDisplayed_Proxy = true;
     }
 }
@@ -248,7 +248,7 @@ void OptionsDialog::showRestartWarning_Lang()
 {
     if(!fRestartWarningDisplayed_Lang)
     {
-        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting Clam."), QMessageBox::Ok);
+        QMessageBox::warning(this, tr("Warning"), tr("This setting will take effect after restarting PayCon."), QMessageBox::Ok);
         fRestartWarningDisplayed_Lang = true;
     }
 }

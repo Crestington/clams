@@ -31,7 +31,7 @@ public:
         Language,          // QString
         CoinControlFeatures, // bool
         MinimizeCoinAge,   // bool
-        UseClamTheme,      // bool
+        UsePayConTheme,      // bool
         UseConSpeech,     // bool
         UseConSpeechRandom, // bool
         ConSpeechIndex,   // int

@@ -84,7 +84,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
  
-const string strMessageMagic = "Clam Signed Message:\n";
+const string strMessageMagic = "PayCon Signed Message:\n";
  
 
 extern enum Checkpoints::CPMode CheckpointsMode;
@@ -1076,9 +1076,9 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindex, int64_t nCoinAge, int64
 
     } else {
 
-        const int64_t randSpan = 2147483647; //Big Number, its unclear but possable correlates to the amount of clams that have ever existed.
-        const int64_t maxReward = 1000 * COIN; //1000 CLAMS
-        const int64_t minReward = 10000000; //.1 CLAM
+        const int64_t randSpan = 2147483647; //Big Number, its unclear but possable correlates to the amount of paycon that have ever existed.
+        const int64_t maxReward = 1000 * COIN; //1000 CON
+        const int64_t minReward = 10000000; //.1 CON
         double multFactor = 3000; //Exponential Curve Factor
  
         //Randomize based on blockHash
@@ -1096,10 +1096,10 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindex, int64_t nCoinAge, int64
  
         //Sanity Checks, If they happen: "We're All Going To Die"
         if(nSubsidy < minReward){
-            //If less than minReward, == 1 CLAM
+            //If less than minReward, == 1 CON
             nSubsidy = minReward;
         } else if(nSubsidy > maxReward) {
-            //If more than maxReward, == 1 CLAM
+            //If more than maxReward, == 1 CON
             nSubsidy = minReward;
         } else {
             nSubsidy = ceil(nSubsidy);
@@ -1468,7 +1468,7 @@ bool CTransaction::FetchInputs(CTxDB& txdb, const map<uint256, CTxIndex>& mapTes
             return DoS(100, error("FetchInputs() : %s prevout.n out of range %d %"PRIszu" %"PRIszu" prev tx %s\n%s", GetHash().ToString(), prevout.n, txPrev.vout.size(), txindex.vSpent.size(), prevout.hash.ToString(), txPrev.ToString()));
         }
 
-        // if nDigs is a non-NULL pointer, check how many initial-distribution CLAMs this transaction moves
+        // if nDigs is a non-NULL pointer, check how many initial-distribution CON this transaction moves
         if (nDigs) {
             CBlock block;
             if (block.ReadFromDisk(txindex.pos.nFile, txindex.pos.nBlockPos, false)) {
@@ -1798,7 +1798,7 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
 
         mapQueuedChanges[hashTx] = CTxIndex(posThisTx, tx.vout.size());
 
-        // check for burned coins (sent to xCLAMBURNXXXXXXXXXXXXXXXXXXX1HaxZH)
+        // check for burned coins (sent to xCONBURNXXXXXXXXXXXXXXXXXXX1HaxZH)
         BOOST_FOREACH(CTxOut& txout, tx.vout)
             if (HexStr(txout.scriptPubKey.begin(), txout.scriptPubKey.end()) == "76a9142c2a57256197df6a1c7d6f14daccf4c3dcf4de4288ac") {
                 LogPrintf("BURN: %s\n", FormatMoney(txout.nValue));
@@ -3086,7 +3086,7 @@ struct CImportingNow
 
 void ThreadImport(std::vector<boost::filesystem::path> vImportFiles)
 {
-    RenameThread("Clam-loadblk");
+    RenameThread("PayCon-loadblk");
 
     CImportingNow imp;
 
@@ -3245,7 +3245,7 @@ void static ProcessGetData(CNode* pfrom)
                     if (inv.hash == pfrom->hashContinue)
                     {
                         // Default behavior of PoS coins is to send last PoW block here which client
-                        // receives as an orphan. With CLAM we want hyper download speed so further
+                        // receives as an orphan. With PayCon we want hyper download speed so further
                         // block (index HIGH_BLOCK_INDEX) is sent. If server does not have it yet,
                         // then proceeds with default behavior.
                         vector<CInv> vInv;

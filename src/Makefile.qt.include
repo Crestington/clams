@@ -1,4 +1,4 @@
-bin_PROGRAMS += qt/clam-qt
+bin_PROGRAMS += qt/paycon-qt
 noinst_LIBRARIES += qt/libbitcoinqt.a
 
 # bitcoin qt core #
@@ -194,11 +194,11 @@ RES_ICONS = \
   qt/res/icons/add.png \
   qt/res/icons/address-book.png \
   qt/res/icons/bitcoin.icns \
-  qt/res/icons/clam.png \
-  qt/res/icons/clam.ico \
-  qt/res/icons/clam-16.png \
-  qt/res/icons/clam-80.png \
-  qt/res/icons/clam_testnet.png \
+  qt/res/icons/paycon.png \
+  qt/res/icons/paycon.ico \
+  qt/res/icons/paycon-16.png \
+  qt/res/icons/paycon-80.png \
+  qt/res/icons/paycon_testnet.png \
   qt/res/icons/clock1.png \
   qt/res/icons/clock2.png \
   qt/res/icons/clock3.png \
@@ -323,25 +323,25 @@ $(qt_libbitcoinqt_a_OBJECTS) $(qt_bitcoin_qt_OBJECTS) : | $(QT_MOC)
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# clam-qt binary #
-qt_clam_qt_CPPFLAGS = $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# paycon-qt binary #
+qt_paycon_qt_CPPFLAGS = $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
-qt_clam_qt_SOURCES = qt/bitcoin.cpp
+qt_paycon_qt_SOURCES = qt/bitcoin.cpp
 if TARGET_DARWIN
-  qt_clam_qt_SOURCES += $(BITCOIN_MM)
+  qt_paycon_qt_SOURCES += $(BITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_clam_qt_SOURCES += $(BITCOIN_RC)
+  qt_paycon_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_clam_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+qt_paycon_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_clam_qt_LDADD += $(LIBBITCOIN_WALLET)
+qt_paycon_qt_LDADD += $(LIBBITCOIN_WALLET)
 endif
-qt_clam_qt_LDADD += $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
+qt_paycon_qt_LDADD += $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1)
-qt_clam_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_clam_qt_LIBTOOLFLAGS = --tag CXX
+qt_paycon_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_paycon_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
@@ -365,10 +365,10 @@ CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda 
 
 CLEANFILES += $(CLEAN_QT)
 
-clam_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_clam_qt_OBJECTS) qt/clam-qt$(EXEEXT) $(LIBBITCOINQT)
+paycon_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_paycon_qt_OBJECTS) qt/paycon-qt$(EXEEXT) $(LIBBITCOINQT)
 
-clam_qt : qt/clam-qt$(EXEEXT)
+paycon_qt : qt/paycon-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

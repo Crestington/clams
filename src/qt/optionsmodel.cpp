@@ -14,7 +14,7 @@
 #include <QSettings>
 
 // shared UI settings in guiutil.h
-bool fUseClamTheme;
+bool fUsePayConTheme;
 bool fUseConSpeech;
 bool fUseConSpeechRandom;
 int nConSpeechIndex;
@@ -60,7 +60,7 @@ void OptionsModel::Init()
     nTransactionFee = settings.value("nTransactionFee").toLongLong();
     nReserveBalance = settings.value("nReserveBalance").toLongLong();
     language = settings.value("language", "").toString();
-    fUseClamTheme = settings.value("fUseClamTheme", true).toBool();
+    fUsePayConTheme = settings.value("fUsePayConTheme", true).toBool();
     fUseConSpeech = settings.value("fUseConSpeech", true).toBool();
     fUseConSpeechRandom = settings.value("fUseConSpeechRandom", true).toBool();
     nConSpeechIndex = settings.value("nConSpeechIndex", 0).toInt();
@@ -132,8 +132,8 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
             return QVariant(fCoinControlFeatures);
         case MinimizeCoinAge:
             return settings.value("fMinimizeCoinAge", GetBoolArg("-minimizecoinage", false));
-        case UseClamTheme:
-            return QVariant(fUseClamTheme);
+        case UsePayConTheme:
+            return QVariant(fUsePayConTheme);
         case UseConSpeech:
             return QVariant(fUseConSpeech);
         case UseConSpeechRandom:
@@ -233,9 +233,9 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
             fMinimizeCoinAge = value.toBool();
             settings.setValue("fMinimizeCoinAge", fMinimizeCoinAge);
             break;
-        case UseClamTheme:
-            fUseClamTheme = value.toBool();
-            settings.setValue("fUseClamTheme", fUseClamTheme);
+        case UsePayConTheme:
+            fUsePayConTheme = value.toBool();
+            settings.setValue("fUsePayConTheme", fUsePayConTheme);
             break;
         case UseConSpeech:
             fUseConSpeech = value.toBool();

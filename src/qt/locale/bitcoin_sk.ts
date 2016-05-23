@@ -3,22 +3,22 @@
     <name>AboutDialog</name>
     <message>
         <location filename="../forms/aboutdialog.ui" line="+14"/>
-        <source>About Clam</source>
-        <translation>O Clam</translation>
+        <source>About PayCon</source>
+        <translation>O PayCon</translation>
     </message>
     <message>
         <location line="+39"/>
-        <source>&lt;b&gt;Clam&lt;/b&gt; version</source>
-        <translation>&lt;b&gt;Clam&lt;/b&gt; verzia</translation>
+        <source>&lt;b&gt;PayCon&lt;/b&gt; version</source>
+        <translation>&lt;b&gt;PayCon&lt;/b&gt; verzia</translation>
     </message>
     <message>
         <location line="+41"/>
         <source>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The Clam developers</source>
+Copyright © 2014 The PayCon developers</source>
         <translation>Copyright © 2009-2014 The Bitcoin developers
 Copyright © 2012-2014 The NovaCoin developers
-Copyright © 2014 The Clam developers</translation>
+Copyright © 2014 The PayCon developers</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -65,8 +65,8 @@ Tento produkt obsahuje softvér vyvinutý Projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="-46"/>
-        <source>These are your Clam addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
-        <translation>Toto sú vaše Clam adresy pre príjem platieb. Možno budete chcieť dať inú každému odosielateľovi, takže môžete sledovať, kto Vám platí.</translation>
+        <source>These are your PayCon addresses for receiving payments. You may want to give a different one to each sender so you can keep track of who is paying you.</source>
+        <translation>Toto sú vaše PayCon adresy pre príjem platieb. Možno budete chcieť dať inú každému odosielateľovi, takže môžete sledovať, kto Vám platí.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -80,8 +80,8 @@ Tento produkt obsahuje softvér vyvinutý Projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="+11"/>
-        <source>Sign a message to prove you own a Clam address</source>
-        <translation>Podpísať správu, že vlastníte Clam adresu</translation>
+        <source>Sign a message to prove you own a PayCon address</source>
+        <translation>Podpísať správu, že vlastníte PayCon adresu</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -95,8 +95,8 @@ Tento produkt obsahuje softvér vyvinutý Projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="-14"/>
-        <source>Verify a message to ensure it was signed with a specified Clam address</source>
-        <translation>Overte správu, aby ste zabezpečili, že bola podpísaná s určitou Clam adresou</translation>
+        <source>Verify a message to ensure it was signed with a specified PayCon address</source>
+        <translation>Overte správu, aby ste zabezpečili, že bola podpísaná s určitou PayCon adresou</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -263,8 +263,8 @@ Tento produkt obsahuje softvér vyvinutý Projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="-58"/>
-        <source>Clam will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
-        <translation>Clam sa teraz zavrie aby dokončil proces zašifrovania. Nezabudnite, že zašifrovanie vašej peňaženky nemôže plne chrániť vaše mince pred krádežou malwarom napadnutím vašeho počítača.</translation>
+        <source>PayCon will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your coins from being stolen by malware infecting your computer.</source>
+        <translation>PayCon sa teraz zavrie aby dokončil proces zašifrovania. Nezabudnite, že zašifrovanie vašej peňaženky nemôže plne chrániť vaše mince pred krádežou malwarom napadnutím vašeho počítača.</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -377,8 +377,8 @@ Tento produkt obsahuje softvér vyvinutý Projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="+6"/>
-        <source>Show information about Clam</source>
-        <translation>Zobraziť informácie o Clam</translation>
+        <source>Show information about PayCon</source>
+        <translation>Zobraziť informácie o PayCon</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -427,13 +427,13 @@ Tento produkt obsahuje softvér vyvinutý Projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="-64"/>
-        <source>Send coins to a Clam address</source>
-        <translation>Poslať mince na Clam adresu</translation>
+        <source>Send coins to a PayCon address</source>
+        <translation>Poslať mince na PayCon adresu</translation>
     </message>
     <message>
         <location line="+47"/>
-        <source>Modify configuration options for Clam</source>
-        <translation>Upraviť možnosti konfigurácie pre Clam</translation>
+        <source>Modify configuration options for PayCon</source>
+        <translation>Upraviť možnosti konfigurácie pre PayCon</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -472,8 +472,8 @@ Tento produkt obsahuje softvér vyvinutý Projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="-202"/>
-        <source>Clam</source>
-        <translation>Clam</translation>
+        <source>PayCon</source>
+        <translation>PayCon</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -482,8 +482,8 @@ Tento produkt obsahuje softvér vyvinutý Projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="+180"/>
-        <source>&amp;About Clam</source>
-        <translation>&amp;O Clam</translation>
+        <source>&amp;About PayCon</source>
+        <translation>&amp;O PayCon</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -539,13 +539,13 @@ Tento produkt obsahuje softvér vyvinutý Projektom OpenSSL Project pre použiti
     <message>
         <location line="+0"/>
         <location line="+60"/>
-        <source>Clam client</source>
-        <translation>Clam client</translation>
+        <source>PayCon client</source>
+        <translation>PayCon client</translation>
     </message>
     <message numerus="yes">
         <location line="+75"/>
-        <source>%n active connection(s) to Clam network</source>
-        <translation><numerusform>%n aktívne spojenie s Clam sieťov</numerusform><numerusform>%n aktívnych spojení s Clam sieťov</numerusform><numerusform>%n aktívnych spojení s Clam sieťov</numerusform></translation>
+        <source>%n active connection(s) to PayCon network</source>
+        <translation><numerusform>%n aktívne spojenie s PayCon sieťov</numerusform><numerusform>%n aktívnych spojení s PayCon sieťov</numerusform><numerusform>%n aktívnych spojení s PayCon sieťov</numerusform></translation>
     </message>
     <message>
         <location line="+40"/>
@@ -584,13 +584,13 @@ Tento produkt obsahuje softvér vyvinutý Projektom OpenSSL Project pre použiti
     </message>
     <message>
         <location line="-312"/>
-        <source>About Clam card</source>
-        <translation>O Clam karte</translation>
+        <source>About PayCon card</source>
+        <translation>O PayCon karte</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Show information about Clam card</source>
-        <translation>Zobraziť informácie o Clam karte</translation>
+        <source>Show information about PayCon card</source>
+        <translation>Zobraziť informácie o PayCon karte</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -668,8 +668,8 @@ Adresa: %4</translation>
     <message>
         <location line="-15"/>
         <location line="+15"/>
-        <source>URI can not be parsed! This can be caused by an invalid Clam address or malformed URI parameters.</source>
-        <translation>URI nemožno analyzovať! To môže byť spôsobené neplatnou Clam adresu alebo chybnými URI parametrami.</translation>
+        <source>URI can not be parsed! This can be caused by an invalid PayCon address or malformed URI parameters.</source>
+        <translation>URI nemožno analyzovať! To môže byť spôsobené neplatnou PayCon adresu alebo chybnými URI parametrami.</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -728,8 +728,8 @@ Adresa: %4</translation>
     </message>
     <message>
         <location filename="../bitcoin.cpp" line="+109"/>
-        <source>A fatal error occurred. Clam can no longer continue safely and will quit.</source>
-        <translation>Došlo k závažnej chybe. Clam už nemôže pokračovať bezpečne a bude ukončený.</translation>
+        <source>A fatal error occurred. PayCon can no longer continue safely and will quit.</source>
+        <translation>Došlo k závažnej chybe. PayCon už nemôže pokračovať bezpečne a bude ukončený.</translation>
     </message>
 </context>
 <context>
@@ -1062,8 +1062,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="-5"/>
-        <source>The entered address &quot;%1&quot; is not a valid Clam address.</source>
-        <translation>Zadaná adresa &quot;%1&quot; nie je platnou Clam adresou.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid PayCon address.</source>
+        <translation>Zadaná adresa &quot;%1&quot; nie je platnou PayCon adresou.</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -1081,8 +1081,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     <message>
         <location filename="../guiutil.cpp" line="+420"/>
         <location line="+12"/>
-        <source>Clam-Qt</source>
-        <translation>Clam-Qt</translation>
+        <source>PayCon-Qt</source>
+        <translation>PayCon-Qt</translation>
     </message>
     <message>
         <location line="-12"/>
@@ -1154,13 +1154,13 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+31"/>
-        <source>Automatically start Clam after logging in to the system.</source>
-        <translation>Automaticky spustiť Clam po prihlásení sa do systému.</translation>
+        <source>Automatically start PayCon after logging in to the system.</source>
+        <translation>Automaticky spustiť PayCon po prihlásení sa do systému.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>&amp;Start Clam on system login</source>
-        <translation>&amp;Spustiť Clam pri prihlásení do systému</translation>
+        <source>&amp;Start PayCon on system login</source>
+        <translation>&amp;Spustiť PayCon pri prihlásení do systému</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1179,8 +1179,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+6"/>
-        <source>Automatically open the Clam client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automaticky otvoriť port klienta Clam na routeri. To funguje iba vtedy, ak váš router podporuje UPnP a je povolené.</translation>
+        <source>Automatically open the PayCon client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automaticky otvoriť port klienta PayCon na routeri. To funguje iba vtedy, ak váš router podporuje UPnP a je povolené.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1189,8 +1189,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the Clam network through a SOCKS proxy (e.g. when connecting through Tor).</source>
-        <translation>Pripojenie k sieti Clam cez SOCKS proxy server (napr. pri pripojení cez Tor).</translation>
+        <source>Connect to the PayCon network through a SOCKS proxy (e.g. when connecting through Tor).</source>
+        <translation>Pripojenie k sieti PayCon cez SOCKS proxy server (napr. pri pripojení cez Tor).</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1264,8 +1264,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+13"/>
-        <source>The user interface language can be set here. This setting will take effect after restarting Clam.</source>
-        <translation>Jazyk používateľského rozhrania je možné tu nastaviť. Toto nastavenie sa prejaví až po reštartovaní Clam.</translation>
+        <source>The user interface language can be set here. This setting will take effect after restarting PayCon.</source>
+        <translation>Jazyk používateľského rozhrania je možné tu nastaviť. Toto nastavenie sa prejaví až po reštartovaní PayCon.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -1279,8 +1279,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+9"/>
-        <source>Whether to show Clam addresses in the transaction list or not.</source>
-        <translation>Či chcete zobraziť Clam adresy v zozname transakcií alebo nie.</translation>
+        <source>Whether to show PayCon addresses in the transaction list or not.</source>
+        <translation>Či chcete zobraziť PayCon adresy v zozname transakcií alebo nie.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1326,8 +1326,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     <message>
         <location line="-9"/>
         <location line="+9"/>
-        <source>This setting will take effect after restarting Clam.</source>
-        <translation>Toto nastavenie sa prejaví až po reštartovaní Clam.</translation>
+        <source>This setting will take effect after restarting PayCon.</source>
+        <translation>Toto nastavenie sa prejaví až po reštartovaní PayCon.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1345,8 +1345,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     <message>
         <location line="+33"/>
         <location line="+231"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Clam network after a connection is established, but this process has not completed yet.</source>
-        <translation>Zobrazené informácie môžu byť zastaralé. Vaša peňaženka sa automaticky synchronizuje so sieťou Clam po nadviazaní spojenia, ale tento proces nie je ešte dokončený.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the PayCon network after a connection is established, but this process has not completed yet.</source>
+        <translation>Zobrazené informácie môžu byť zastaralé. Vaša peňaženka sa automaticky synchronizuje so sieťou PayCon po nadviazaní spojenia, ale tento proces nie je ešte dokončený.</translation>
     </message>
     <message>
         <location line="-160"/>
@@ -1561,8 +1561,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+7"/>
-        <source>Show the Clam-Qt help message to get a list with possible Clam command-line options.</source>
-        <translation>Zobraziť Clam-Qt nápovedu k získaniu zoznamu pre možnosti Clam príkazového riadku.</translation>
+        <source>Show the PayCon-Qt help message to get a list with possible PayCon command-line options.</source>
+        <translation>Zobraziť PayCon-Qt nápovedu k získaniu zoznamu pre možnosti PayCon príkazového riadku.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1581,13 +1581,13 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="-104"/>
-        <source>Clam - Debug window</source>
-        <translation>Clam - Ladiace okno</translation>
+        <source>PayCon - Debug window</source>
+        <translation>PayCon - Ladiace okno</translation>
     </message>
     <message>
         <location line="+25"/>
-        <source>Clam Core</source>
-        <translation>Clam Core</translation>
+        <source>PayCon Core</source>
+        <translation>PayCon Core</translation>
     </message>
     <message>
         <location line="+279"/>
@@ -1596,8 +1596,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+7"/>
-        <source>Open the Clam debug log file from the current data directory. This can take a few seconds for large log files.</source>
-        <translation>Otvorte Clam ladenie log súbor z aktuálneho adresára dát. To môže trvať niekoľko sekúnd pre veľké súbory protokolu.</translation>
+        <source>Open the PayCon debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Otvorte PayCon ladenie log súbor z aktuálneho adresára dát. To môže trvať niekoľko sekúnd pre veľké súbory protokolu.</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1606,8 +1606,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location filename="../rpcconsole.cpp" line="-33"/>
-        <source>Welcome to the Clam RPC console.</source>
-        <translation>Vitajte v Clam RPC konzole.</translation>
+        <source>Welcome to the PayCon RPC console.</source>
+        <translation>Vitajte v PayCon RPC konzole.</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1680,8 +1680,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
         <location line="+86"/>
         <location line="+86"/>
         <location line="+32"/>
-        <source>0.00 CLAM</source>
-        <translation>123.456 CLAM {0.00 ?}</translation>
+        <source>0.00 CON</source>
+        <translation>123.456 CON {0.00 ?}</translation>
     </message>
     <message>
         <location line="-191"/>
@@ -1750,8 +1750,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+16"/>
-        <source>123.456 CLAM</source>
-        <translation>123.456 CLAM</translation>
+        <source>123.456 CON</source>
+        <translation>123.456 CON</translation>
     </message>
     <message>
         <location line="+31"/>
@@ -1765,8 +1765,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location filename="../sendcoinsdialog.cpp" line="-173"/>
-        <source>Enter a Clam address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Zadajte Clam adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a PayCon address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Zadajte PayCon adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="+15"/>
@@ -1865,8 +1865,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+251"/>
-        <source>WARNING: Invalid Clam address</source>
-        <translation>VAROVANIE: Neplatná Clam adresa</translation>
+        <source>WARNING: Invalid PayCon address</source>
+        <translation>VAROVANIE: Neplatná PayCon adresa</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1939,8 +1939,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location filename="../sendcoinsentry.cpp" line="+1"/>
-        <source>Enter a Clam address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Zadaj a Clam addresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a PayCon address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Zadaj a PayCon addresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
 </context>
 <context>
@@ -2000,8 +2000,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Clam address</source>
-        <translation>Podpísať správu ako dôkaz, že vlastníte túto Clam adresu</translation>
+        <source>Sign the message to prove you own this PayCon address</source>
+        <translation>Podpísať správu ako dôkaz, že vlastníte túto PayCon adresu</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2032,8 +2032,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+40"/>
-        <source>Verify the message to ensure it was signed with the specified Clam address</source>
-        <translation>Overte správu, aby zabezpečilo, že bola podpísaná s danou Clam adresu</translation>
+        <source>Verify the message to ensure it was signed with the specified PayCon address</source>
+        <translation>Overte správu, aby zabezpečilo, že bola podpísaná s danou PayCon adresu</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -2043,8 +2043,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     <message>
         <location filename="../signverifymessagedialog.cpp" line="+27"/>
         <location line="+3"/>
-        <source>Enter a Clam address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
-        <translation>Zadajte Clam adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
+        <source>Enter a PayCon address (e.g. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</source>
+        <translation>Zadajte PayCon adresu (napr. B8gZqgY4r2RoEdqYk3QsAqFckyf9pRHN6i)</translation>
     </message>
     <message>
         <location line="-2"/>
@@ -2053,8 +2053,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+3"/>
-        <source>Enter Clam signature</source>
-        <translation>Zadajte Clam podpis</translation>
+        <source>Enter PayCon signature</source>
+        <translation>Zadajte PayCon podpis</translation>
     </message>
     <message>
         <location line="+82"/>
@@ -2624,8 +2624,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     <name>bitcoin-core</name>
     <message>
         <location filename="../bitcoinstrings.cpp" line="+33"/>
-        <source>Clam version</source>
-        <translation>Clam verzia</translation>
+        <source>PayCon version</source>
+        <translation>PayCon verzia</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2634,8 +2634,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+1"/>
-        <source>Send command to -server or clamd</source>
-        <translation>Pošli príkaz na -server alebo clamd</translation>
+        <source>Send command to -server or paycond</source>
+        <translation>Pošli príkaz na -server alebo paycond</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -2654,13 +2654,13 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+2"/>
-        <source>Specify configuration file (default: clam.conf)</source>
-        <translation>Zadajte konfiguračný súbor (predvolené: clam.conf)</translation>
+        <source>Specify configuration file (default: paycon.conf)</source>
+        <translation>Zadajte konfiguračný súbor (predvolené: paycon.conf)</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Specify pid file (default: clamd.pid)</source>
-        <translation>Zadajte pid súbor (predvolené: clamd.pid)</translation>
+        <source>Specify pid file (default: paycond.pid)</source>
+        <translation>Zadajte pid súbor (predvolené: paycond.pid)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -2809,8 +2809,8 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
     </message>
     <message>
         <location line="+61"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Clam will not work properly.</source>
-        <translation>Upozornenie: Skontrolujte, že dátum a čas počítača sú správne! Ak je Váš čas nesprávny Clam nebude pracovať správne.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong PayCon will not work properly.</source>
+        <translation>Upozornenie: Skontrolujte, že dátum a čas počítača sú správne! Ak je Váš čas nesprávny PayCon nebude pracovať správne.</translation>
     </message>
     <message>
         <location line="-31"/>
@@ -2999,24 +2999,24 @@ Sumy nižšie ako 0,546 násobok minimálneho poplatku sú zobrazené ako DUST.<
         <source>%s, you must set a rpcpassword in the configuration file:
  %s
 It is recommended you use the following random password:
-rpcuser=clamrpc
+rpcuser=payconrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Clam Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;PayCon Alert&quot; admin@foo.com
 </source>
         <translation>%s, musíte nastaviť rpcpassword v konfiguračnom súbore:
  %s
 Je odporúčané použiť nasledujúce náhodné heslo:
-rpcuser=clamrpc
+rpcuser=payconrpc
 rpcpassword=%s
 (Nemusíte si pamätať toto heslo)
 Užívateľské meno a heslo nesmú byť rovnaké. 
 Ak súbor neexistuje, vytvorte ho s oprávneniami súborov vlastníkov iba na čítatanie.
 Odporúča sa tiež nastaviť alertnotify, takže budete upozornení na problémy;
-napríklad: alertnotify=echo %%s | mail -s &quot;Clam Alert&quot; admin@foo.com</translation>
+napríklad: alertnotify=echo %%s | mail -s &quot;PayCon Alert&quot; admin@foo.com</translation>
     </message>
     <message>
         <location line="+51"/>
@@ -3140,13 +3140,13 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Clam Alert&quot; admin@foo.com<
     </message>
     <message>
         <location line="+1"/>
-        <source>Cannot obtain a lock on data directory %s.  Clam is probably already running.</source>
-        <translation>Nemožno získať zámok na dátový adresár %s. Clam už pravdepodobne beží.</translation>
+        <source>Cannot obtain a lock on data directory %s.  PayCon is probably already running.</source>
+        <translation>Nemožno získať zámok na dátový adresár %s. PayCon už pravdepodobne beží.</translation>
     </message>
     <message>
         <location line="-98"/>
-        <source>Clam</source>
-        <translation>Clam</translation>
+        <source>PayCon</source>
+        <translation>PayCon</translation>
     </message>
     <message>
         <location line="+140"/>
@@ -3180,13 +3180,13 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Clam Alert&quot; admin@foo.com<
     </message>
     <message>
         <location line="+4"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Clam</source>
-        <translation>Chyba pri načítaní wallet.dat: Peňaženka vyžaduje novšiu verziu Clam</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of PayCon</source>
+        <translation>Chyba pri načítaní wallet.dat: Peňaženka vyžaduje novšiu verziu PayCon</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Wallet needed to be rewritten: restart Clam to complete</source>
-        <translation>Peňaženka potrebuje byť prepísaná: reštartujte Clam k dokončeniu</translation>
+        <source>Wallet needed to be rewritten: restart PayCon to complete</source>
+        <translation>Peňaženka potrebuje byť prepísaná: reštartujte PayCon k dokončeniu</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3255,8 +3255,8 @@ napríklad: alertnotify=echo %%s | mail -s &quot;Clam Alert&quot; admin@foo.com<
     </message>
     <message>
         <location line="+122"/>
-        <source>Unable to bind to %s on this computer. Clam is probably already running.</source>
-        <translation>Nemôžem sa pripojiť na %s na tomto počítači. Clam je pravdepodobne už beží.</translation>
+        <source>Unable to bind to %s on this computer. PayCon is probably already running.</source>
+        <translation>Nemôžem sa pripojiť na %s na tomto počítači. PayCon je pravdepodobne už beží.</translation>
     </message>
     <message>
         <location line="-97"/>

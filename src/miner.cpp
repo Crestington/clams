@@ -524,7 +524,7 @@ void ThreadStakeMiner(CWallet *pwallet)
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
 
     // Make this thread recognisable as the mining thread
-    RenameThread("clam-miner");
+    RenameThread("con-miner");
 
     CReserveKey reservekey(pwallet);
 

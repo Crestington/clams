@@ -134,10 +134,10 @@
        <item>
         <widget class="QCheckBox" name="bitcoinAtStartup">
          <property name="toolTip">
-          <string>Automatically start Clam after logging in to the system.</string>
+          <string>Automatically start PayCon after logging in to the system.</string>
          </property>
          <property name="text">
-          <string>&amp;Start Clam on system login</string>
+          <string>&amp;Start PayCon on system login</string>
          </property>
         </widget>
        </item>
@@ -164,7 +164,7 @@
        <item>
         <widget class="QCheckBox" name="mapPortUpnp">
          <property name="toolTip">
-          <string>Automatically open the Clam client port on the router. This only works when your router supports UPnP and it is enabled.</string>
+          <string>Automatically open the PayCon client port on the router. This only works when your router supports UPnP and it is enabled.</string>
          </property>
          <property name="text">
           <string>Map port using &amp;UPnP</string>
@@ -174,7 +174,7 @@
        <item>
         <widget class="QCheckBox" name="connectSocks">
          <property name="toolTip">
-          <string>Connect to the Clam network through a SOCKS proxy (e.g. when connecting through Tor).</string>
+          <string>Connect to the PayCon network through a SOCKS proxy (e.g. when connecting through Tor).</string>
          </property>
          <property name="text">
           <string>&amp;Connect through SOCKS proxy:</string>
@@ -348,7 +348,7 @@
          <item>
           <widget class="QValueComboBox" name="lang">
            <property name="toolTip">
-            <string>The user interface language can be set here. This setting will take effect after restarting Clam.</string>
+            <string>The user interface language can be set here. This setting will take effect after restarting PayCon.</string>
            </property>
           </widget>
          </item>
@@ -399,7 +399,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="useClamTheme">
+        <widget class="QCheckBox" name="usePayConTheme">
          <property name="text">
           <string>Use black visual theme (requires restart)</string>
          </property>

@@ -1,1 +1,1 @@
-/home/willis/git/clamnotary/clams/src/qt/notarypage.cpp
+/home/willis/git/payconnotary/paycon/src/qt/notarypage.cpp

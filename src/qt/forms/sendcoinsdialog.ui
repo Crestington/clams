@@ -719,7 +719,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="clamQuotes">
+      <widget class="QComboBox" name="conQuotes">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -799,7 +799,7 @@
           <cursorShape>IBeamCursor</cursorShape>
          </property>
          <property name="text">
-          <string>123.456 CLAM</string>
+          <string>123.456 CON</string>
          </property>
          <property name="textInteractionFlags">
           <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
