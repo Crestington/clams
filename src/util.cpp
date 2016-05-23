@@ -1098,11 +1098,11 @@ boost::filesystem::path GetQuoteFile()
     return pathQuoteFile;
 }
 
-boost::filesystem::path GetClamourConSpeechFile()
+boost::filesystem::path GetConcordConSpeechFile()
 {
-    boost::filesystem::path pathClamourSpeechFile(GetArg("-clamourconspeech", "clamourconspeech.txt"));
-    if (!pathClamourSpeechFile.is_complete()) pathClamourSpeechFile = GetDataDir() / pathClamourSpeechFile;
-    return pathClamourSpeechFile;
+    boost::filesystem::path pathConcordSpeechFile(GetArg("-concordconspeech", "concordconspeech.txt"));
+    if (!pathConcordSpeechFile.is_complete()) pathConcordSpeechFile = GetDataDir() / pathConcordSpeechFile;
+    return pathConcordSpeechFile;
 }
 
 string HashToString(unsigned char* hash,int n) {
@@ -1145,7 +1145,7 @@ bool LoadConSpeech()
         conSpeech.push_back (line);
     }
 
-    LoadClamourConSpeech();
+    LoadConcordConSpeech();
     
     return true;   
 }
@@ -1166,16 +1166,16 @@ string GetDefaultConSpeech() {
     return strDefaultSpeech;
 }
 
-string GetRandomClamourConSpeech() {
-    if (clamourConSpeech.empty())
+string GetRandomConcordConSpeech() {
+    if (concordConSpeech.empty())
         return "";
-    int index = rand() % clamourConSpeech.size();
-    return clamourConSpeech[index];
+    int index = rand() % concordConSpeech.size();
+    return concordConSpeech[index];
 }
 
-string GetDefaultClamourConSpeech() {
+string GetDefaultConcordConSpeech() {
     if (strDefaultStakeSpeech == "")
-        return GetRandomClamourConSpeech();
+        return GetRandomConcordConSpeech();
     return strDefaultStakeSpeech;
 }
 
@@ -1197,10 +1197,10 @@ bool SaveConSpeech()
     return true; 
 }
 
-bool LoadClamourConSpeech()
+bool LoadConcordConSpeech()
 {
-    clamourConSpeech.clear();
-    std::ifstream speechfile(GetClamourConSpeechFile().string().c_str());
+    concordConSpeech.clear();
+    std::ifstream speechfile(GetConcordConSpeechFile().string().c_str());
 
     if(!speechfile) //Always test the file open.
         return false;
@@ -1208,18 +1208,18 @@ bool LoadClamourConSpeech()
     string line;
     while (getline(speechfile, line, '\n'))
     {
-        clamourConSpeech.push_back (line);
+        concordConSpeech.push_back (line);
     }
     
     return true;
 }
 
-bool SaveClamourConSpeech()
+bool SaveConcordConSpeech()
 {
-    FILE* file = fopen(GetClamourConSpeechFile().string().c_str(), "w");
+    FILE* file = fopen(GetConcordConSpeechFile().string().c_str(), "w");
     if (file)
     {
-        for (std::vector<std::string>::iterator it = clamourConSpeech.begin(); it != clamourConSpeech.end(); it++) {
+        for (std::vector<std::string>::iterator it = concordConSpeech.begin(); it != concordConSpeech.end(); it++) {
             fprintf(file, "%s\n", it->c_str());
         }
         fclose(file);

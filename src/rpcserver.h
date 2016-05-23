@@ -194,11 +194,11 @@ extern UniValue getrewardto(const UniValue& params, bool fHelp);
 extern UniValue setrewardto(const UniValue& params, bool fHelp);
 
 extern UniValue sendnotarytransaction(const UniValue& params, bool fHelp);
-extern UniValue createclamour(const UniValue& params, bool fHelp);
+extern UniValue createconcord(const UniValue& params, bool fHelp);
 extern UniValue getnotarytransaction(const UniValue& params, bool fHelp);
 
-extern UniValue getclamour(const UniValue& params, bool fHelp);
-extern UniValue listclamours(const UniValue& params, bool fHelp);
+extern UniValue getconcord(const UniValue& params, bool fHelp);
+extern UniValue listconcords(const UniValue& params, bool fHelp);
 extern UniValue getsupport(const UniValue& params, bool fHelp);
 
 #endif

@@ -40,7 +40,7 @@ CTxMemPool mempool;
 unsigned int nTransactionsUpdated = 0;
  
 map<uint256, CBlockIndex*> mapBlockIndex;
-map<string, CClamour*> mapClamour;
+map<string, CConcord*> mapConcord;
 set<pair<COutPoint, unsigned int> > setStakeSeen;
 
 CBigNum bnProofOfStakeLimit(~uint256(0) >> 20);
@@ -285,15 +285,15 @@ bool CTransaction::ReadFromDisk(COutPoint prevout)
     return ReadFromDisk(txdb, prevout, txindex);
 }
 
-bool CTransaction::IsCreateClamour(string& strHash, string& strURL) const
+bool CTransaction::IsCreateConcord(string& strHash, string& strURL) const
 {
     size_t len = strCONspeech.length();
 
-    if (strCONspeech.substr(0, 15) == "create clamour ")
+    if (strCONspeech.substr(0, 15) == "create concord ")
         LogPrintf("checking speech length %d : %s\n", len, strCONspeech);
 
-    // "create clamour ..." speech must begin with those 15 characters, and have a 64 character hash after it
-    if (len < 15+64 || strCONspeech.substr(0, 15) != "create clamour ")
+    // "create concord ..." speech must begin with those 15 characters, and have a 64 character hash after it
+    if (len < 15+64 || strCONspeech.substr(0, 15) != "create concord ")
         return false;
 
     strURL = "";
@@ -1672,11 +1672,11 @@ bool CBlock::DisconnectBlock(CTxDB& txdb, CBlockIndex* pindex)
         if (!vtx[i].DisconnectInputs(txdb))
             return false;
 
-    BOOST_FOREACH(CClamour& clamour, pindex->vClamour)
+    BOOST_FOREACH(CConcord& concord, pindex->vConcord)
     {
-        string pid = clamour.strHash.substr(0, 8);
-        mapClamour.erase(pid);
-        LogPrintf("erased clamour pid %s from map\n", pid);
+        string pid = concord.strHash.substr(0, 8);
+        mapConcord.erase(pid);
+        LogPrintf("erased concord pid %s from map\n", pid);
     }
 
     // Update block index on disk without changing it in memory.
@@ -1866,18 +1866,18 @@ bool CBlock::ConnectBlock(CTxDB& txdb, CBlockIndex* pindex, bool fJustCheck)
     if (nStakeReward)
         StakeToWallets(vtx[1].vout[1].scriptPubKey, nStakeReward);
 
-    // scan for CONspeech registering CLAMour petitions
+    // scan for CONspeech registering CONcord petitions
     string strHash, strURL;
     
     BOOST_FOREACH(CTransaction& tx, vtx)
-        if (tx.IsCreateClamour(strHash, strURL)) {
-            LogPrintf("found 'create clamour' with '%s' and '%s'\n", strHash, strURL);
+        if (tx.IsCreateConcord(strHash, strURL)) {
+            LogPrintf("found 'create concord' with '%s' and '%s'\n", strHash, strURL);
             string pid = strHash.substr(0, 8);
-            map<string, CClamour*>::iterator mi = mapClamour.find(pid);
-            if (mi == mapClamour.end())
-                pindex->vClamour.push_back(*(mapClamour[pid] = new CClamour(pindex->nHeight, tx.GetHash(), strHash, strURL)));
+            map<string, CConcord*>::iterator mi = mapConcord.find(pid);
+            if (mi == mapConcord.end())
+                pindex->vConcord.push_back(*(mapConcord[pid] = new CConcord(pindex->nHeight, tx.GetHash(), strHash, strURL)));
             else
-                LogPrintf("duplicate clamour with pid %s: %s\n", pid, tx.strCONspeech.substr(0, MAX_TX_COMMENT_LEN));
+                LogPrintf("duplicate concord with pid %s: %s\n", pid, tx.strCONspeech.substr(0, MAX_TX_COMMENT_LEN));
         }
 
     return true;
@@ -2506,7 +2506,7 @@ std::set<std::string> CBlockIndex::GetSupport() const
             string& strSpeech = block.vtx[1].strCONspeech;
             // LogPrintf("stake speech is '%s'\n", strSpeech);
 
-            if (strSpeech.substr(0, 7) != "clamour")
+            if (strSpeech.substr(0, 7) != "concord")
                 break;
 
             int n = 7;

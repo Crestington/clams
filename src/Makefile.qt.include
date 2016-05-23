@@ -80,7 +80,7 @@ QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
   qt/forms/askpassphrasedialog.ui \
   qt/forms/clamdb.ui \
-  qt/forms/clamourpage.ui \
+  qt/forms/concordpage.ui \
   qt/forms/coincontroldialog.ui \
   qt/forms/editaddressdialog.ui \
   qt/forms/notarypage.ui \
@@ -103,7 +103,7 @@ QT_MOC_CPP = \
   qt/moc_bitcoingui.cpp \
   qt/moc_bitcoinunits.cpp \
   qt/moc_clamdb.cpp \
-  qt/moc_clamourpage.cpp \
+  qt/moc_concordpage.cpp \
   qt/moc_clientmodel.cpp \
   qt/moc_coincontroldialog.cpp \
   qt/moc_coincontroltreewidget.cpp \
@@ -157,7 +157,7 @@ BITCOIN_QT_H = \
   qt/bitcoingui.h \
   qt/bitcoinunits.h \
   qt/clamdb.h \
-  qt/clamourpage.h \
+  qt/concordpage.h \
   qt/clientmodel.h \
   qt/coincontroldialog.h \
   qt/coincontroltreewidget.h \
@@ -246,7 +246,7 @@ BITCOIN_QT_CPP = \
   qt/bitcoingui.cpp \
   qt/bitcoinunits.cpp \
   qt/clamdb.cpp \
-  qt/clamourpage.cpp \
+  qt/concordpage.cpp \
   qt/clientmodel.cpp \
   qt/csvmodelwriter.cpp \
   qt/guiutil.cpp \

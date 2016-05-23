@@ -264,7 +264,7 @@ static const CRPCCommand vRPCCommands[] =
     { "getaddressesbyaccount",  &getaddressesbyaccount,  true,      false,     true },
     { "sendtoaddress",          &sendtoaddress,          false,     false,     true },
     { "sendnotarytransaction",  &sendnotarytransaction,  false,     false,     true },
-    { "createclamour",          &createclamour,          false,     false,     true },
+    { "createconcord",          &createconcord,          false,     false,     true },
     { "getstakedbyaddress",     &getstakedbyaddress,     false,     false,     true },
     { "getreceivedbyaddress",   &getreceivedbyaddress,   false,     false,     true },
     { "getreceivedbyaccount",   &getreceivedbyaccount,   false,     false,     true },
@@ -315,8 +315,8 @@ static const CRPCCommand vRPCCommands[] =
     { "setstaketo",             &setstaketo,             true,      true,      true },
     { "getrewardto",            &getrewardto,            true,      true,      true },
     { "setrewardto",            &setrewardto,            true,      true,      true },
-    { "getclamour",             &getclamour,             true,      true,      false },
-    { "listclamours",           &listclamours,           true,      true,      false },
+    { "getconcord",             &getconcord,             true,      true,      false },
+    { "listconcords",           &listconcords,           true,      true,      false },
     { "getsupport",             &getsupport,             true,      true,      false },
 #endif
 };

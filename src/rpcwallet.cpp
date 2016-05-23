@@ -1510,20 +1510,20 @@ UniValue sendnotarytransaction(const UniValue& params, bool fHelp)
     return wtx.GetHash().GetHex();
 }
 
-UniValue createclamour(const UniValue& params, bool fHelp)
+UniValue createconcord(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() < 1)
         throw runtime_error(
-            "createclamour <clamourProposal> [url]\n"
-            "<clamourProposal> is a full 64 character sha256 hash of a CLAMour proposal.\n"
+            "createconcord <concordProposal> [url]\n"
+            "<concordProposal> is a full 64 character sha256 hash of a CONcord proposal.\n"
             "Any string of text that is not 64 characters in length\n"
-            "will be treated as the body of a CLAMour proposal and automatically\n"
+            "will be treated as the body of a CONcord proposal and automatically\n"
             "hashed into sha256\n\n"
-            "[url] is an optional field to include a link to your CLAMour proposal"
+            "[url] is an optional field to include a link to your CONcord proposal"
             + HelpRequiringPassphrase());
 
     CWalletTx wtx;
-    std::string prefix = "clamour";
+    std::string prefix = "concord";
     std::string strHash = params[0].get_str();
     std::string conSpeech = "";
     std::string url = "";

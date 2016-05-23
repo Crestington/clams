@@ -17,7 +17,7 @@ class COutput;
 class COutPoint;
 class uint256;
 class CCoinControl;
-class CClamour;
+class CConcord;
 
 QT_BEGIN_NAMESPACE
 class QTimer;
@@ -126,10 +126,10 @@ public:
     void sendNotaryTx(std::string hash);
 
     // Search for a petition
-    void searchClamours(std::string pid);
+    void searchConcords(std::string pid);
 
     // Create a petition
-    void sendClamourTx(std::string hash);
+    void sendConcordTx(std::string hash);
 
     bool getPubKey(const CKeyID &address, CPubKey& vchPubKeyOut) const;
     void getOutputs(const std::vector<COutPoint>& vOutpoints, std::vector<COutput>& vOutputs);
@@ -201,10 +201,10 @@ signals:
     void notaryTxSent(std::string txID, std::string txError);
 
     // Petition search results
-    void clamourSearchComplete(CClamour *pResult);
+    void concordSearchComplete(CConcord *pResult);
 
     // Petition created
-    void clamourTxSent(std::string txID, std::string txError);
+    void concordTxSent(std::string txID, std::string txError);
 };
 
 

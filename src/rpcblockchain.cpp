@@ -140,18 +140,18 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* blockindex, bool fP
     result.push_back(Pair("proofhash", blockindex->hashProof.GetHex()));
     result.push_back(Pair("entropybit", (int)blockindex->GetStakeEntropyBit()));
     result.push_back(Pair("modifier", strprintf("%016x", blockindex->nStakeModifier)));
-    UniValue clamours(UniValue::VARR);
-    BOOST_FOREACH (const CClamour& clamour, blockindex->vClamour)
+    UniValue concords(UniValue::VARR);
+    BOOST_FOREACH (const CConcord& concord, blockindex->vConcord)
     {
         UniValue entry(UniValue::VOBJ);
-        entry.push_back(Pair("txid", clamour.txid.GetHex()));
-        entry.push_back(Pair("hash", clamour.strHash));
-        if (clamour.strURL.length())
-            entry.push_back(Pair("url", clamour.strURL));
-        clamours.push_back(entry);
+        entry.push_back(Pair("txid", concord.txid.GetHex()));
+        entry.push_back(Pair("hash", concord.strHash));
+        if (concord.strURL.length())
+            entry.push_back(Pair("url", concord.strURL));
+        concords.push_back(entry);
     }
-    if (clamours.size())
-        result.push_back(Pair("clamours", clamours));
+    if (concords.size())
+        result.push_back(Pair("concords", concords));
 
     UniValue txinfo(UniValue::VARR);
     BOOST_FOREACH (const CTransaction& tx, block.vtx)

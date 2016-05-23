@@ -4,7 +4,7 @@ using namespace std;
 
 vector<string> conSpeechList;
 vector<string> conSpeech;
-vector<string> clamourConSpeech;
+vector<string> concordConSpeech;
 vector<string> quoteList;
 CWeightedSpeech weightedStakeSpeech;
 

@@ -9,7 +9,7 @@
 
 extern std::vector<std::string> conSpeechList;
 extern std::vector<std::string> conSpeech;
-extern std::vector<std::string> clamourConSpeech;
+extern std::vector<std::string> concordConSpeech;
 extern std::vector<std::string> quoteList;
 
 class CWeightedSpeech;

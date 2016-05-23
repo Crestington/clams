@@ -195,12 +195,12 @@ boost::filesystem::path GetConfigFile();
 boost::filesystem::path GetPidFile();
 bool LoadConSpeech();
 bool SaveConSpeech();
-bool LoadClamourConSpeech();
-bool SaveClamourConSpeech();
+bool LoadConcordConSpeech();
+bool SaveConcordConSpeech();
 std::string HashToString(unsigned char* hash, int n);
 std::string GetDefaultConSpeech();
-std::string GetDefaultClamourConSpeech();
-std::string GetRandomClamourConSpeech();
+std::string GetDefaultConcordConSpeech();
+std::string GetRandomConcordConSpeech();
 boost::filesystem::path GetConSpeechFile();
 boost::filesystem::path GetQuoteFile();
 #ifndef WIN32

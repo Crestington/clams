@@ -28,8 +28,8 @@ using namespace std;
 using namespace boost;
 using namespace boost::assign;
 
-typedef map<string, CClamour*> mapClamour_t;
-extern  mapClamour_t mapClamour;
+typedef map<string, CConcord*> mapConcord_t;
+extern  mapConcord_t mapConcord;
 
 UniValue getinfo(const UniValue& params, bool fHelp)
 {
@@ -480,36 +480,36 @@ UniValue setweightedstakespeech(const UniValue& params, bool fHelp)
     return strprintf("loaded %d weighted stake speech text(s)", weightedStakeSpeech.size());
 }
 
-UniValue getclamour(const UniValue& params, bool fHelp)
+UniValue getconcord(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "getclamour <pid>\n"
+            "getconcord <pid>\n"
             "Returns an object containing info about the specified petition ID");
 
     string pid = params[0].get_str();
 
-    map<string, CClamour*>::iterator mi = mapClamour.find(pid);
-    if (mi == mapClamour.end())
+    map<string, CConcord*>::iterator mi = mapConcord.find(pid);
+    if (mi == mapConcord.end())
         return NullUniValue;
 
     UniValue ret(UniValue::VOBJ);
-    CClamour *clamour = mi->second;
+    CConcord *concord = mi->second;
 
     ret.push_back(Pair("pid", pid));
-    ret.push_back(Pair("hash", clamour->strHash));
-    if (clamour->strURL.length())
-        ret.push_back(Pair("url", clamour->strURL));
-    ret.push_back(Pair("txid", clamour->txid.GetHex()));
-    ret.push_back(Pair("confirmations", pindexBest->nHeight - clamour->nHeight + 1));
+    ret.push_back(Pair("hash", concord->strHash));
+    if (concord->strURL.length())
+        ret.push_back(Pair("url", concord->strURL));
+    ret.push_back(Pair("txid", concord->txid.GetHex()));
+    ret.push_back(Pair("confirmations", pindexBest->nHeight - concord->nHeight + 1));
     return ret;
 }
 
-UniValue listclamours(const UniValue& params, bool fHelp)
+UniValue listconcords(const UniValue& params, bool fHelp)
 {
     if (fHelp || params.size() > 2)
         throw runtime_error(
-            "listclamours [minconf=1] [maxconf=9999999]\n"
+            "listconcords [minconf=1] [maxconf=9999999]\n"
             "Returns an array of objects containing info about all registered petitions\n"
             "with between minconf and maxconf (inclusive) confirmations.");
 
@@ -525,21 +525,21 @@ UniValue listclamours(const UniValue& params, bool fHelp)
 
     UniValue ret(UniValue::VARR);
 
-    BOOST_FOREACH(const mapClamour_t::value_type pair, mapClamour)
+    BOOST_FOREACH(const mapConcord_t::value_type pair, mapConcord)
     {
-        CClamour *clamour = pair.second;
-        int nDepth = pindexBest->nHeight - clamour->nHeight + 1;
+        CConcord *concord = pair.second;
+        int nDepth = pindexBest->nHeight - concord->nHeight + 1;
 
         if (nDepth < nMinDepth || nDepth > nMaxDepth)
             continue;
 
         UniValue entry(UniValue::VOBJ);
 
-        entry.push_back(Pair("pid", clamour->strHash.substr(0, 8)));
-        entry.push_back(Pair("hash", clamour->strHash));
-        if (clamour->strURL.length())
-            entry.push_back(Pair("url", clamour->strURL));
-        entry.push_back(Pair("txid", clamour->txid.GetHex()));
+        entry.push_back(Pair("pid", concord->strHash.substr(0, 8)));
+        entry.push_back(Pair("hash", concord->strHash));
+        if (concord->strURL.length())
+            entry.push_back(Pair("url", concord->strURL));
+        entry.push_back(Pair("txid", concord->txid.GetHex()));
         entry.push_back(Pair("confirmations", nDepth));
 
         ret.push_back(entry);
@@ -553,7 +553,7 @@ UniValue getsupport(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 3)
         throw runtime_error(
             "getsupport [threshold=0] [window=10000] [block=<bestblock>]\n"
-            "Returns an object detailing the number of blocks supporting CLAMour petitions\n"
+            "Returns an object detailing the number of blocks supporting CONcord petitions\n"
             "<threshold> sets a percentage threshold of support below which petitions are ignored.\n"
             "<window> sets the number of blocks to count and defaults to 10000.\n"
             "<block> sets which block ends the window, and defaults to the last block in the chain.");

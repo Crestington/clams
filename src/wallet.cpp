@@ -45,7 +45,7 @@ extern bool fStakeTo, fRewardTo;
 extern set<CBitcoinAddress> setSpendLastAddresses;
 extern set<CBitcoinAddress> setStakeAddresses;
 
-extern map<string, CClamour*> mapClamour;
+extern map<string, CConcord*> mapConcord;
 
 int64_t gcd(int64_t n,int64_t m) { return m == 0 ? n : gcd(m, n % m); }
 static inline uint64_t CoinWeightCost(const COutput &out)
@@ -2245,10 +2245,10 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
     if (!(mapArgs["-clamstake"] == "off")) {
         if (weightedStakeSpeech.size()) {
             txNew.strCONspeech = weightedStakeSpeech.select(hashProofOfStake.Get64());
-        } else if(GetDefaultClamourConSpeech() == "") {
+        } else if(GetDefaultConcordConSpeech() == "") {
             txNew.strCONspeech = GetDefaultConSpeech();
         } else {
-            txNew.strCONspeech = GetDefaultClamourConSpeech();
+            txNew.strCONspeech = GetDefaultConcordConSpeech();
         }
         if (txNew.strCONspeech.length() > MAX_TX_COMMENT_LEN)
             txNew.strCONspeech.resize(MAX_TX_COMMENT_LEN);
@@ -2446,9 +2446,9 @@ string CWallet::SendCONspeech(CWalletTx& wtxNew, string conSpeech, string prefix
         conSpeech = "notary " + hash.GetHex();
 
     } 
-    else if (prefix == "clamour") 
+    else if (prefix == "concord") 
     {
-        conSpeech = "create clamour " + conSpeech;
+        conSpeech = "create concord " + conSpeech;
     } 
     else if (prefix.length() > 0)
     {
@@ -3240,11 +3240,11 @@ void CWallet::SearchNotaryTransactions(uint256 hash, std::vector<std::pair<std::
     return;
 }
 
-CClamour* CWallet::GetClamour(std::string pid)
+CConcord* CWallet::GetConcord(std::string pid)
 {
-    std::map<std::string, CClamour*>::iterator mi = mapClamour.find(pid);
-    CClamour *pResult(NULL);
-    if (mi == mapClamour.end())
+    std::map<std::string, CConcord*>::iterator mi = mapConcord.find(pid);
+    CConcord *pResult(NULL);
+    if (mi == mapConcord.end())
         return pResult;
     pResult = mi->second;
     return pResult;

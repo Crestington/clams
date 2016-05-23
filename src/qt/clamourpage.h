@@ -1,27 +1,27 @@
-#ifndef CLAMOURPAGE_H
-#define CLAMOURPAGE_H
+#ifndef CONCORDPAGE_H
+#define CONCORDPAGE_H
 
 #include <QWidget>
 
 namespace Ui {
-class ClamourPage;
+class ConcordPage;
 }
 class WalletModel;
-class CClamour;
+class CConcord;
 
-class ClamourPage : public QWidget
+class ConcordPage : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit ClamourPage(QWidget *parent = 0);
-    ~ClamourPage();
+    explicit ConcordPage(QWidget *parent = 0);
+    ~ConcordPage();
 
     void setModel(WalletModel *model);
 
 public slots:
-    void showClamourTxResult(std::string txID, std::string txError);
-    void setClamourSearchResults(CClamour *pResult);
+    void showConcordTxResult(std::string txID, std::string txError);
+    void setConcordSearchResults(CConcord *pResult);
 
 private slots:
     void on_createPetitionEdit_textChanged();
@@ -30,10 +30,10 @@ private slots:
 
     void on_setVotesButton_clicked();
 
-    void on_searchClamourButton_clicked();
+    void on_searchConcordButton_clicked();
 
 private:
-    Ui::ClamourPage *ui;
+    Ui::ConcordPage *ui;
     WalletModel *model;
 
     void loadVotes();
@@ -41,4 +41,4 @@ private:
     void clearSearchTable();
 };
 
-#endif // CLAMOURPAGE_H
+#endif // CONCORDPAGE_H

@@ -440,18 +440,18 @@ void WalletModel::sendNotaryTx(std::string hash)
     emit notaryTxSent(wtx.GetHash().GetHex(), txError);
 }
 
-void WalletModel::searchClamours(std::string pid)
+void WalletModel::searchConcords(std::string pid)
 {
-    CClamour *pResult(wallet->GetClamour(pid));
-    emit clamourSearchComplete(pResult);
+    CConcord *pResult(wallet->GetConcord(pid));
+    emit concordSearchComplete(pResult);
 }
 
-void WalletModel::sendClamourTx(std::string hash)
+void WalletModel::sendConcordTx(std::string hash)
 {
     CWalletTx wtx;
-    std::string prefix = "clamour";
+    std::string prefix = "concord";
     std::string txError = wallet->SendCONspeech(wtx, hash, prefix);
-    emit clamourTxSent(wtx.GetHash().GetHex(), txError);
+    emit concordTxSent(wtx.GetHash().GetHex(), txError);
 }
 
 bool WalletModel::getPubKey(const CKeyID &address, CPubKey& vchPubKeyOut) const

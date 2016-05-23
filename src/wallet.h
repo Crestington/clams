@@ -33,7 +33,7 @@ class CWalletTx;
 class CReserveKey;
 class COutput;
 class CWalletDB;
-class CClamour;
+class CConcord;
 
 /** (client) version numbers for particular wallet features */
 enum WalletFeature
@@ -179,7 +179,7 @@ public:
     void GetKeyBirthTimes(std::map<CKeyID, int64_t> &mapKeyBirth) const;
 
     void SearchNotaryTransactions(uint256 hash, std::vector<std::pair<std::string, int> >& vTxResults);
-    CClamour* GetClamour(std::string pid);
+    CConcord* GetConcord(std::string pid);
 
     /** Increment the next transaction order id
         @return next transaction order id

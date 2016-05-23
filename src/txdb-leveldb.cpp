@@ -26,7 +26,7 @@ using namespace boost;
 
 leveldb::DB *txdb; // global pointer for LevelDB object instance
 
-extern map<string, CClamour*> mapClamour;
+extern map<string, CConcord*> mapConcord;
 
 static leveldb::Options GetOptions() {
     leveldb::Options options;
@@ -390,7 +390,7 @@ bool CTxDB::LoadBlockIndex()
         pindexNew->nMoneySupply   = diskindex.nMoneySupply;
         pindexNew->nDigsupply     = diskindex.nDigsupply;
         pindexNew->nStakeSupply   = diskindex.nStakeSupply;
-        pindexNew->vClamour       = diskindex.vClamour;
+        pindexNew->vConcord       = diskindex.vConcord;
         pindexNew->nFlags         = diskindex.nFlags;
         pindexNew->nStakeModifier = diskindex.nStakeModifier;
         pindexNew->prevoutStake   = diskindex.prevoutStake;
@@ -592,8 +592,8 @@ bool CTxDB::LoadBlockIndex()
     }
 
     for (CBlockIndex* pindex = pindexGenesisBlock; pindex; pindex = pindex->pnext)
-        BOOST_FOREACH(CClamour& clamour, pindex->vClamour)
-            mapClamour[clamour.strHash.substr(0, 8)] = &clamour;
+        BOOST_FOREACH(CConcord& concord, pindex->vConcord)
+            mapConcord[concord.strHash.substr(0, 8)] = &concord;
     
     return true;
 }

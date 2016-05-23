@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ClamourPage</class>
- <widget class="QWidget" name="ClamourPage">
+ <class>ConcordPage</class>
+ <widget class="QWidget" name="ConcordPage">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -177,7 +177,7 @@
           </widget>
          </item>
          <item row="0" column="1">
-          <widget class="QValidatedLineEdit" name="searchClamourEdit">
+          <widget class="QValidatedLineEdit" name="searchConcordEdit">
            <property name="placeholderText">
             <string>Enter an 8-digit petition ID.</string>
            </property>
@@ -199,7 +199,7 @@
             </spacer>
            </item>
            <item>
-            <widget class="QPushButton" name="searchClamourButton">
+            <widget class="QPushButton" name="searchConcordButton">
              <property name="text">
               <string>Search</string>
              </property>
@@ -210,7 +210,7 @@
         </layout>
        </item>
        <item>
-        <widget class="QTableWidget" name="searchClamourTable">
+        <widget class="QTableWidget" name="searchConcordTable">
          <attribute name="horizontalHeaderHighlightSections">
           <bool>false</bool>
          </attribute>
