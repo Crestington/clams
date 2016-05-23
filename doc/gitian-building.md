@@ -11,7 +11,7 @@ the same, tested dependencies are used and statically built into the executable.
 Multiple developers build the source code by following a specific descriptor
 ("recipe"), cryptographically sign the result, and upload the resulting signature.
 These results are compared and only if they match, the build is accepted and uploaded
-to clamclient.com.
+to payconclient.com.
 
 More independent gitian builders are needed, which is why I wrote this
 guide. It is preferred to follow these steps yourself instead of using someone else's
@@ -277,12 +277,12 @@ cd ..
 
 **Note**: When sudo asks for a password, enter the password for the user *debian* not for *root*.
 
-Clone the git repositories for clams and gitian and then checkout the clam version that you want to build.
+Clone the git repositories for paycon and gitian and then checkout the paycon version that you want to build.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/nochowderforyou/clams
-cd clams
+git clone https://github.com/nochowderforyou/paycon
+cd paycon
 git checkout v${VERSION}
 cd ..
 ```
@@ -310,7 +310,7 @@ There will be a lot of warnings printed during build of the images. These can be
 Getting and building the inputs
 --------------------------------
 
-Follow the instructions in [doc/release-process.md](release-process.md) in the clams repository
+Follow the instructions in [doc/release-process.md](release-process.md) in the paycon repository
 under 'Fetch and build inputs' to install sources which require manual intervention. Also follow
 the next step: 'Seed the Gitian sources cache', which will fetch all necessary source files allowing
 for gitian to work offline.
@@ -319,7 +319,7 @@ Building Bitcoin
 ----------------
 
 To build Bitcoin (for Linux, OSX and Windows) just follow the steps under 'perform
-gitian builds' in [doc/release-process.md](release-process.md) in the clams repository.
+gitian builds' in [doc/release-process.md](release-process.md) in the paycon repository.
 
 This may take a long time as it also builds the dependencies needed for each descriptor.
 These dependencies will be cached after a successful build to avoid rebuilding them when possible.
@@ -332,12 +332,12 @@ tail -f var/build.log
 
 Output from `gbuild` will look something like
 
-    Initialized empty Git repository in /home/debian/gitian-builder/inputs/clams/.git/
+    Initialized empty Git repository in /home/debian/gitian-builder/inputs/paycon/.git/
     remote: Reusing existing pack: 35606, done.
     remote: Total 35606 (delta 0), reused 0 (delta 0)
     Receiving objects: 100% (35606/35606), 26.52 MiB | 4.28 MiB/s, done.
     Resolving deltas: 100% (25724/25724), done.
-    From https://github.com/nochowderforyou/clams
+    From https://github.com/nochowderforyou/paycon
     ... (new tags, new branch etc)
     --- Building for precise x86_64 ---
     Stopping target if it is up
@@ -365,9 +365,9 @@ For example:
 ```bash
 URL=https://github.com/laanwj/bitcoin.git
 COMMIT=2014_03_windows_unicode_path
-./bin/gbuild --commit clams=${COMMIT} --url clams=${URL} ../clams/contrib/gitian-descriptors/gitian-linux.yml
-./bin/gbuild --commit clams=${COMMIT} --url clams=${URL} ../clams/contrib/gitian-descriptors/gitian-win.yml
-./bin/gbuild --commit clams=${COMMIT} --url clams=${URL} ../clams/contrib/gitian-descriptors/gitian-osx.yml
+./bin/gbuild --commit paycon=${COMMIT} --url paycon=${URL} ../paycon/contrib/gitian-descriptors/gitian-linux.yml
+./bin/gbuild --commit paycon=${COMMIT} --url paycon=${URL} ../paycon/contrib/gitian-descriptors/gitian-win.yml
+./bin/gbuild --commit paycon=${COMMIT} --url paycon=${URL} ../paycon/contrib/gitian-descriptors/gitian-osx.yml
 ```
 
 Signing externally
@@ -382,9 +382,9 @@ When you execute `gsign` you will get an error from GPG, which can be ignored. C
 in `gitian.sigs` to your signing machine and do
 
 ```bash
-    gpg --detach-sign ${VERSION}-linux/${SIGNER}/clam-build.assert
-    gpg --detach-sign ${VERSION}-win/${SIGNER}/clam-build.assert
-    gpg --detach-sign ${VERSION}-osx/${SIGNER}/clam-build.assert
+    gpg --detach-sign ${VERSION}-linux/${SIGNER}/paycon-build.assert
+    gpg --detach-sign ${VERSION}-win/${SIGNER}/paycon-build.assert
+    gpg --detach-sign ${VERSION}-osx/${SIGNER}/paycon-build.assert
 ```
 
 This will create the `.sig` files that can be committed together with the `.assert` files to assert your
@@ -394,5 +394,5 @@ Uploading signatures
 ---------------------
 
 After building and signing you can push your signatures (both the `.assert` and `.assert.sig` files) to the
-[clams/gitian.sigs](https://github.com/clams/gitian.sigs/) repository, or if that's not possible create a pull
+[paycon/gitian.sigs](https://github.com/paycon/gitian.sigs/) repository, or if that's not possible create a pull
 request. You can also mail the files to me (laanwj@gmail.com) and I'll commit them.

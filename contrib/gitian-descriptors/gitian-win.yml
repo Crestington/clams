@@ -1,5 +1,5 @@
 ---
-name: "clams-win-1.4.3.2"
+name: "paycon-win-1.4.3.2"
 enable_cache: true
 suites:
 - "precise"
@@ -20,8 +20,8 @@ packages:
 - "zip"
 reference_datetime: "2013-06-01 00:00:00"
 remotes:
-- "url": "https://github.com/nochowderforyou/clams.git"
-  "dir": "clams"
+- "url": "https://github.com/nochowderforyou/paycon.git"
+  "dir": "paycon"
 files: []
 script: |
   WRAP_DIR=$HOME/wrapped
@@ -65,7 +65,7 @@ script: |
   done
   export PATH=${WRAP_DIR}:${PATH}
 
-  cd clams
+  cd paycon
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do
@@ -76,14 +76,14 @@ script: |
   ./autogen.sh
   ./configure --prefix=${BASEPREFIX}/`echo "${HOSTS}" | awk '{print $1;}'`
   make dist
-  SOURCEDIST=`echo clam-*.tar.gz`
+  SOURCEDIST=`echo paycon-*.tar.gz`
   DISTNAME=`echo ${SOURCEDIST} | sed 's/.tar.*//'`
 
   # Correct tar file order
   mkdir -p temp
   pushd temp
   tar xf ../$SOURCEDIST
-  find clam-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
+  find paycon-* | sort | tar --no-recursion --mode='u+rw,go+r-w,a+X' --owner=0 --group=0 -c -T - | gzip -9n > ../$SOURCEDIST
   popd
 
   ORIGPATH="$PATH"
@@ -100,7 +100,7 @@ script: |
     make ${MAKEOPTS}
     make deploy
     make install-strip
-    cp -f clam-*setup*.exe $OUTDIR/
+    cp -f paycon-*setup*.exe $OUTDIR/
     cd installed
     find . -name "*.dll"
     #mv ${DISTNAME}/bin/*.dll ${DISTNAME}/lib/

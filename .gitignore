@@ -1,7 +1,7 @@
 src/*.exe
-src/Clam
-src/Clamd
-src/test_Clam
+src/PayCon
+src/PayCond
+src/test_PayCon
 src/build.h
 .*.swp
 *.*~*
@@ -10,11 +10,11 @@ src/build.h
 *.orig
 *.o
 *.patch
-.Clam
+.PayCon
 #compilation and Qt preprocessor part
 *.qm
 Makefile
-Clam-qt
+PayCon-qt
 #resources cpp
 qrc_*.cpp
 #qt creator
@@ -24,7 +24,7 @@ qrc_*.cpp
 build
 
 !src/leveldb/Makefile
-clamd
+paycond
 configure
 aclocal.m4
 bitcoin-config.h.in
@@ -67,8 +67,8 @@ src/qt/moc_bitcoinaddressvalidator.cpp
 src/qt/moc_bitcoinamountfield.cpp
 src/qt/moc_bitcoingui.cpp
 src/qt/moc_bitcoinunits.cpp
-src/qt/moc_clamdb.cpp
-src/qt/moc_clamourpage.cpp
+src/qt/moc_condb.cpp
+src/qt/moc_concordpage.cpp
 src/qt/moc_clientmodel.cpp
 src/qt/moc_coincontroldialog.cpp
 src/qt/moc_coincontroltreewidget.cpp
@@ -98,8 +98,8 @@ src/qt/moc_walletmodel.cpp
 src/qt/overviewpage.moc
 src/qt/rpcconsole.moc
 src/qt/forms/ui_aboutdialog.h
-src/qt/forms/ui_clamdb.h
-src/qt/forms/ui_clamourpage.h
+src/qt/forms/ui_condb.h
+src/qt/forms/ui_concordpage.h
 src/qt/forms/ui_notarypage.h
 src/qt/forms/ui_optionsdialog.h
 src/qt/forms/ui_overviewpage.h
@@ -116,18 +116,18 @@ src/test/data/base58_keys_valid.json.h
 src/test/data/script_invalid.json.h
 src/test/data/script_valid.json.h
 test_bitcoin
-src/qt/clam-qt
+src/qt/paycon-qt
 src/qt/moc_aboutdialog.cpp
 src/qt/moc_monitoreddatamapper.cpp
 src/qt/test/moc_uritests.cpp
 src/qt/test/test_bitcoin-qt
-src/qt/clam-qt.config
-src/qt/clam-qt.creator
-src/qt/clam-qt.creator.user
-src/qt/clam-qt.files
-src/qt/clam-qt.includes
+src/qt/paycon-qt.config
+src/qt/paycon-qt.creator
+src/qt/paycon-qt.creator.user
+src/qt/paycon-qt.files
+src/qt/paycon-qt.includes
 moc_qrcodedialog.cpp
 moc_macnotificationhandler.cpp
 libbitcoin_util_a-cleanse.Po
-Clam-Qt.app
-Clam-Qt.dmg
+PayCon-Qt.app
+PayCon-Qt.dmg

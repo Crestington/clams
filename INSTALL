@@ -1,9 +1,9 @@
-Building Clam
+Building PayCon
 
-See doc/readme-qt.rst for instructions on building Clam QT,
+See doc/readme-qt.rst for instructions on building PayCon QT,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of Clam.
+implementation of PayCon.
 
-See doc/build-*.txt for instructions on building clamd,
+See doc/build-*.txt for instructions on building paycond,
 the intended-for-services, no-graphical-interface, reference
-implementation of Clam.
+implementation of PayCon.
